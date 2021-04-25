@@ -5,13 +5,86 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href=https://use.fontawesome.com/releases/v5.13.0/css/all.css>
+    <link rel="stylesheet" href="styles/styles.css">
     <title>My Personal Manager</title>
 </head>
 
 <body>
-    <header></header>
-    <main></main>
-    <footer></footer>
+    <header>
+        <div class="menuSection" id="burguerBtn">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <nav>
+            <div class="userInfo">
+                <img src="assets/imageUserExample.jpg" alt="user image">
+                <div>
+                    <p><span id="userName" class="usName">Esmeralda</span> <span id="userLastname">Marin</span></p>
+                    <p><span>Balance $</span><span id="userBalance">5000</span></p>
+                </div>
+            </div>
+            <ul>
+                <li>
+                    <a href=""><i class="fas fa-home"></i>Home</a>
+                </li>
+                <li>
+                    <a href=""><i class="fas fa-money-bill-wave"></i>Operations</a>
+                </li>
+                <li>
+                    <a href=""><i class="fas fa-shapes"></i>Categories</a>
+                </li>
+                <li>
+                    <a href=""><i class="fas fa-chart-pie"></i>Graphics</a>
+                </li>
+            </ul>
+        </nav>
+        <img src="assets/logo.png" alt="Logo of the app">
+    </header>
+    <main>
+        <div class="balanceSection">
+            <h2>My Balance</h2>
+            <p><span>$</span><span id="totalBalance">5000</span></p>
+            <div class="addOp">
+                <i class="fas fa-plus"></i>
+            </div>
+        </div>
+        <div class="operationsSection">
+            <h3>Last Operations</h3>
+            <ul class="listOperations">
+                <li class="operation">
+                    <div class="iconCateg">
+                        <i class="fas fa-dollar-sign"></i>
+                    </div>
+                    <p class="nameCateg">Salary</p>
+                    <p class="amountOp"><span>$</span><span class="amount inc"></span></p>
+                </li>
+                <li class="operation">
+                    <div class="iconCateg">
+                        <i class="fas fa-school"></i>
+                    </div>
+                    <p class="nameCateg">School</p>
+                    <p class="amountOp"><span>$</span><span class="amount exp"></span></p>
+                </li>
+                <li class="operation">
+                    <div class="iconCateg">
+                        <i class="fas fa-dollar-sign"></i>
+                    </div>
+                    <p class="nameCateg">Salary</p>
+                    <p class="amountOp"><span>$</span><span class="amount inc"></span></p>
+                </li>
+                <li class="operation">
+                    <div class="iconCateg">
+                        <i class="fas fa-school"></i>
+                    </div>
+                    <p class="nameCateg">School</p>
+                    <p class="amountOp"><span>$</span><span class="amount exp"></span></p>
+                </li>
+            </ul>
+        </div>
+    </main>
+    <script src="scripts/script.js"></script>
 </body>
 
 </html>
