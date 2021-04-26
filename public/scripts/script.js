@@ -1,5 +1,14 @@
-let burguerBtn = document.getElementById('burguerBtn')
+let burguerBtn = document.getElementById('burguerBtn');
+let nav = document.querySelector('nav')
 
 burguerBtn.addEventListener('click', () => {
-    burguerBtn.classList.toggle('menuActive')
+    nav.classList.add('menuActive');
+
 })
+window.addEventListener('click', function (e) {
+    if (!nav.contains(e.target) && !burguerBtn.contains(e.target)) {
+        nav.classList.remove('menuActive');
+    }
+})
+
+

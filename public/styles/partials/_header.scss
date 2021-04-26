@@ -2,11 +2,11 @@ header {
     display: flex;
     justify-content: space-between;
     padding: 0 30px;
-    height: 60px;
+    height: 70px;
     align-items: center;
     .menuSection {
-        width: 20px;
-        height: 20px;
+        width: 30px;
+        height: 30px;
         display: flex;
         flex-direction: column;
         justify-content: space-evenly;
@@ -15,30 +15,6 @@ header {
             height: 2px;
             background-color: #000;
             transition: all 0.25s ease;
-        }
-        &.menuActive {
-            position: relative;
-            transform: translateX(180px);
-            transition: transform 0.0001s 0.20s ease;
-            z-index: 2;
-            span {
-                position: absolute;
-                transition: all 0.5s ease;
-                background-color: #fff;
-                &:first-child {
-                    transform: rotate(45deg);
-                }
-                &:last-child {
-                    transform: rotate(-45deg);
-                }
-                &:nth-child(2) {
-                    display: none;
-                }
-            }
-            & ~ nav {
-                width: 70%;
-                transition: width 0.35s ease;
-            }
         }
     }
     nav {
@@ -51,7 +27,10 @@ header {
         overflow: hidden;
         background-color: $color2;
         transition: width 0.5s ease;
-
+        &.menuActive {
+            width: 70%;
+            transition: width 0.5s ease;
+        }
         .userInfo {
             width: 100%;
             display: flex;
@@ -108,7 +87,7 @@ header {
         }
     }
     > img {
-        width: 40px;
-        height: 40px;
+        width: 50px;
+        height: 50px;
     }
 }
