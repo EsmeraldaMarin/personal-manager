@@ -13,7 +13,7 @@ app.use(bodyParser.urlencoded({
 app.use(bodyParser.json());
 
 const { selectUsers, insertUser, logIn } = require('./controllers/users');
-
+const { selectOperations, insertOperations, updateOperation, deleteOperation } = require('./controllers/operations')
 //ROUTES
 
 //user routes
@@ -21,7 +21,11 @@ app.get('/users', selectUsers);
 app.post('/users', insertUser);
 app.post('/login', logIn);
 
-//login
+//operations
+app.get('/operations', selectOperations);
+app.post('/operations', insertOperations);
+app.put('/operations/:id', updateOperation);
+app.delete('/operations/:id', deleteOperation);
 
 
 app.listen(3000, () => {

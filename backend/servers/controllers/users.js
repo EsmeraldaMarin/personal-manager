@@ -3,10 +3,10 @@ let jwt = require('jsonwebtoken');
 
 let firma = "FullstackEM";
 
-function selectUsers(req, res) {
+let selectUsers = (req, res) => {
 
     let sql = `SELECT * FROM users`;
-    connection.query(sql, function (err, users) {
+    connection.query(sql, (err, users) => {
         if (err) {
             console.log(err)
             res.status(500).json({ error: 'Internal error' });
@@ -22,13 +22,13 @@ function selectUsers(req, res) {
         }
     })
 }
-function insertUser(req, res) {
+let insertUser = (req, res) => {
 
     let newUser = req.body;
     let password = jwt.sign(newUser.password, firma);
     let validator = 'SELECT email FROM users'
 
-    connection.query(validator, function (err, info) {
+    connection.query(validator, (err, info) => {
 
         let resultEmail = info.find(elem => elem.email === newUser.email)
 
@@ -49,7 +49,7 @@ function insertUser(req, res) {
             "password": "mati123"
         }
         */
-        connection.query(sql, function (err, user) {
+        connection.query(sql, (err, user) => {
             if (err) {
                 console.log(err)
                 res.status(500).json({ error: 'Make sure to enter all the data' });
@@ -66,12 +66,12 @@ function insertUser(req, res) {
     })
 }
 
-function logIn(req, res) {
+let logIn = (req, res) => {
     let user = req.body
     let token = jwt.sign(user.password, firma);
     let sql = `SELECT password FROM users WHERE users.password = '${token}' AND users.email = '${user.email}'`
 
-    connection.query(sql, function (err, passwords) {
+    connection.query(sql, (err, passwords) => {
 
         if (err) {
             res.status(500).json({ message: "Failed to authenticate" })
