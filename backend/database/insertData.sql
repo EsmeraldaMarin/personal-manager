@@ -1,8 +1,8 @@
 /*INSERT USERS*/
 
-INSERT INTO `personal_manager`.`users` (`name`, `lastname`, `email`, `password`, `img`) VALUES ('esmeralda', 'marin', 'esmemarinm03@gmail.com', 'token123', 'imagen.png');
-INSERT INTO `personal_manager`.`users` (`name`, `lastname`, `email`, `password`, `img`) VALUES ('carolina', 'gomez', 'carogomz@gmail.com', 'cargogomez123', 'image2.png');
-INSERT INTO `personal_manager`.`users` (`name`, `lastname`, `email`, `password`, `img`) VALUES ('tobias', 'perez', 'tobiasperez@gmail.com', 'tobiperez123', 'image3.png');
+INSERT INTO `personal_manager`.`users` (`name`, `lastname`, `email`, `password`, `img`) VALUES ('esmeralda', 'marin', 'esmemarinm03@gmail.com', 'eyJhbGciOiJIUzI1NiJ9.dG9rZW4xMjM.eDJYB2N0DXv7hNzL2hePNKrlyiQUNmI-sE_OX5Umw6A', 'imagen.png');
+INSERT INTO `personal_manager`.`users` (`name`, `lastname`, `email`, `password`, `img`) VALUES ('carolina', 'gomez', 'carogomez@gmail.com', 'eyJhbGciOiJIUzI1NiJ9.Y2Fyb2dvbWV6MTIz.NJeYRvLaqbxy29lOEhPmZ0fbOx4TlrBtoOYZVS3xRUw', 'image2.png');
+INSERT INTO `personal_manager`.`users` (`name`, `lastname`, `email`, `password`, `img`) VALUES ('tobias', 'perez', 'tobiasperez@gmail.com', 'eyJhbGciOiJIUzI1NiJ9.dG9iaXBlcmV6MTIz.l_LWVODe7tTq9oQPC16DojqECSQtSu0QEvVTqM74eJw', 'image3.png');
 
 /*INSERT CATEGORIES*/
 
