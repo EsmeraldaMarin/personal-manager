@@ -12,20 +12,33 @@ app.use(bodyParser.urlencoded({
 }))
 app.use(bodyParser.json());
 
-const { selectUsers, insertUser, logIn } = require('./controllers/users');
-const { selectOperations, insertOperations, updateOperation, deleteOperation } = require('./controllers/operations')
+const { selectUsers, selectUserById, insertUser, logIn } = require('./controllers/users');
+const { selectOperations, selectOperationByUserId, insertOperations, updateOperation, deleteOperation } = require('./controllers/operations')
+const { selectCategories, selectCategoriesById, insertCategory, updateCategory } = require('./controllers/categories')
+
+
 //ROUTES
 
 //user routes
 app.get('/users', selectUsers);
+app.get('/users/:id', selectUserById);
 app.post('/users', insertUser);
 app.post('/login', logIn);
 
 //operations
 app.get('/operations', selectOperations);
+app.get('/operations/:id', selectOperationByUserId);
 app.post('/operations', insertOperations);
 app.put('/operations/:id', updateOperation);
 app.delete('/operations/:id', deleteOperation);
+
+//categories
+
+app.get('/categories', selectCategories);
+app.get('/categories/:id', selectCategoriesById);
+app.post('/categories', insertCategory);
+app.put('/categories/:id', updateCategory);
+
 
 
 app.listen(3000, () => {

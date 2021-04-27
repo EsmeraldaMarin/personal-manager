@@ -13,6 +13,20 @@ let selectOperations = (req, res) => {
         }
     })
 }
+let selectOperationByUserId = (req, res) => {
+    let userId = req.params.id;
+    let sql = `SELECT * FROM operations WHERE user_id = ${userId}`
+    connection.query(sql, function (err, operations) {
+        if (err) {
+            console.log(err)
+            res.status(500).json({ error: 'Internal error' });
+
+        } else {
+            res.send(operations)
+        }
+    })
+}
+
 let insertOperations = (req, res) => {
     let newOp = req.body;
     let sql = `INSERT INTO operations(user_id, category_id, amount, commentary, type, date)
@@ -59,8 +73,6 @@ let updateOperation = (req, res) => {
         date = "${update.date}"
         WHERE id = ${operationId}`
 
-    console.log(sql)
-
     connection.query(sql, function (err, operation) {
         if (err) {
             console.log(err)
@@ -90,6 +102,7 @@ let deleteOperation = (req, res) => {
 
 module.exports = {
     selectOperations,
+    selectOperationByUserId,
     insertOperations,
     updateOperation,
     deleteOperation
