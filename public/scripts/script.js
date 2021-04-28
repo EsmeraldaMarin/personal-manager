@@ -1,12 +1,15 @@
 //variables//
-let urlOperations = 'http://localhost:3000/operations'
+let urlOperations = 'http://localhost:3000/operations';
+let urlCategories = 'http://localhost:3000/categories';
+const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImVzbWVtYXJpbm0wM0BnbWFpbC5jb20iLCJwYXNzd29yZCI6InRva2VuMTIzIiwiaWF0IjoxNjE5NTcxNTYyfQ.jAXfOZqNpQmVU72wISfgjTFGZ9kfZFUveBwhbBzlQJA";
+localStorage.setItem('token', token);
+let userToken = localStorage.getItem('token')
 
 let burguerBtn = document.getElementById('burguerBtn');
 let nav = document.querySelector('nav');
 
 let ulLastOperations = document.getElementById('listOperations');
 
-let addOperation = document.getElementById('addOperation');
 let header = document.querySelector('header')
 
 burguerBtn.addEventListener('click', () => {
@@ -19,68 +22,16 @@ window.addEventListener('click', e => {
     }
 })
 
-//get last 10 operations
 
-function getOperations() {
-    return new Promise((resolve, reject) => {
-        fetch(urlOperations)
-            .then(res => res.json())
-            .then(info => {
 
-                //seleccionar solo los del usuario --corregir desde bd. usar middleware
-                resolve(info)
-            })
-    })
-};
-getOperations();
 
-async function lastOperations() {
-    let allOperations = await getOperations();
-    let orderedOperations = allOperations.sort((a, b) => {
-        if (a.date > b.date) {
-            return 1;
-        }
-        if (a.date < b.date) {
-            return -1;
-        }
-        return 0;
-    });
-    let last10Operations = orderedOperations.slice(0, 10);
-    //primero seleccionar las ultimas op, despues seleccionar las ultimas 10;
-
-    last10Operations.forEach(op => {
-        createLiOperations(op)
-    });
+function dateFormater(date) {
+    let stringSeparator, formatedDate;
+    if (date.includes('/')) {
+        stringSeparator = date.split("/");
+    } else if (date.includes('-')) {
+        stringSeparator = date.split("-");
+    }
+    formatedDate = `${stringSeparator[2]}/${stringSeparator[1]}/${stringSeparator[0]}`
+    return formatedDate
 }
-lastOperations()
-
-function createLiOperations(op) {
-    let categoryInfo = op.categoryInfo;
-    let htmlOperation = `
-        <li class="operation">
-            <div class="iconCateg">
-                <img src="assets/icons/${categoryInfo.icon}" alt="icon ${categoryInfo.name}"/>
-            </div>
-            <p class="nameCateg">${categoryInfo.name}</p>
-            <p class="amountOp"><span class="amount ${op.type}">${op.amount}</span></p>
-        </li>
-        `
-
-    ulLastOperations.insertAdjacentHTML('afterbegin', htmlOperation);
-}
-
-//create a new operation
-
-addOperation.addEventListener('click', () => {
-
-    header.insertAdjacentHTML('afterend', formCreateOperation);
-    let form = document.querySelector('#newOperationSection')
-    let comeBackBtn = document.querySelector('#comeBackBtn');
-    comeBackBtn.addEventListener('click', () => {
-        form.classList.add('closeForm');
-        setTimeout(() => {
-            form.remove()
-        }, 700);
-    })
-
-})

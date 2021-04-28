@@ -1,16 +1,19 @@
 const express = require('express');
+const multer = require('multer');
 const cors = require('cors');
 const bodyParser = require('body-parser');
 
-
 let app = express();
-
+let upload = multer();
 
 app.use(cors());
 app.use(bodyParser.urlencoded({
     extended: true
 }))
 app.use(bodyParser.json());
+
+app.use(upload.array());
+app.use(express.static('public'));
 
 const { selectUsers, selectUserById, insertUser, logIn } = require('./controllers/users');
 const { selectOperationsById, selectOperationByUserId, insertOperations, updateOperation, deleteOperation } = require('./controllers/operations');
@@ -29,7 +32,7 @@ app.post('/login', logIn);
 //operations
 app.get('/operations', defineRol, selectOperationByUserId);
 app.get('/operations/:id', selectOperationsById);
-app.post('/operations', insertOperations);
+app.post('/operations', defineRol, insertOperations);
 app.put('/operations/:id', updateOperation);
 app.delete('/operations/:id', deleteOperation);
 

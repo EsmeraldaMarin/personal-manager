@@ -66,8 +66,10 @@ let selectOperationsById = (req, res) => {
 
 let insertOperations = (req, res) => {
     let newOp = req.body;
+    let infoUser = req.params.user;
+
     let sql = `INSERT INTO operations(user_id, category_id, amount, commentary, type, date)
-        VALUES (${newOp.user_id}, ${newOp.category_id}, ${newOp.amount}, "${newOp.commentary}", "${newOp.type}", "${newOp.date}");`;
+        VALUES (${infoUser.id}, ${newOp.category_id}, ${newOp.amount}, "${newOp.commentary}", "${newOp.type}", "${newOp.date}");`;
 
     /*
     {

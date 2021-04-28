@@ -15,8 +15,7 @@ let validateToken = (token) => {
 
 let defineRol = (req, res, next) => {
 
-    //const token = req.body.token;
-    const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImVzbWVtYXJpbm0wM0BnbWFpbC5jb20iLCJwYXNzd29yZCI6InRva2VuMTIzIiwiaWF0IjoxNjE5NTcxNTYyfQ.jAXfOZqNpQmVU72wISfgjTFGZ9kfZFUveBwhbBzlQJA";
+    const token = req.headers.token;
     let decodedUser = validateToken(token)
 
     if (decodedUser) {
