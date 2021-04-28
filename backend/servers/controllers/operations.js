@@ -9,7 +9,23 @@ let selectOperations = (req, res) => {
             res.status(500).json({ error: 'Internal error' });
 
         } else {
-            res.send(operations)
+            operations.forEach(op => {
+                let sqlCategory = `SELECT * FROM categories WHERE id = ${op.category_id}`
+                connection.query(sqlCategory, (err, category) => {
+
+                    if (err) {
+                        console.log(err)
+                        res.status(500).json({ error: 'Internal error' });
+
+                    } else {
+                        op.categoryInfo = category[0];
+
+                        if (op == operations[operations.length - 1]) {
+                            res.send(operations)
+                        }
+                    }
+                });
+            });
         }
     })
 }
@@ -22,7 +38,23 @@ let selectOperationByUserId = (req, res) => {
             res.status(500).json({ error: 'Internal error' });
 
         } else {
-            res.send(operations)
+            operations.forEach(op => {
+                let sqlCategory = `SELECT * FROM categories WHERE id = ${op.category_id}`
+                connection.query(sqlCategory, (err, category) => {
+
+                    if (err) {
+                        console.log(err)
+                        res.status(500).json({ error: 'Internal error' });
+
+                    } else {
+                        op.categoryInfo = category[0];
+
+                        if (op == operations[operations.length - 1]) {
+                            res.send(operations)
+                        }
+                    }
+                });
+            });
         }
     })
 }

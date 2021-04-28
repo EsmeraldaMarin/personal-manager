@@ -4,17 +4,16 @@ main.homeMain {
     align-items: center;
     .balanceSection {
         width: 100%;
-        margin: 20px 0 30px;
+        margin: 40px 0 30px;
         position: relative;
         text-align: center;
         h2 {
             margin-bottom: 15px;
-            font-size: 1.8em;
+            font-size: 2.1em;
             font-weight: normal;
         }
         > p {
-            font-size: 2.1em;
-            font-weight: bold;
+            font-size: 2.5em;
         }
         .addOp {
             width: 40px;
@@ -46,6 +45,8 @@ main.homeMain {
             margin: 0 5px;
             padding-bottom: 10px;
             border-bottom: 2px solid #ddd;
+            font-weight: normal;
+            font-size: 1.2em;
         }
         .listOperations {
             margin-top: 20px;
@@ -69,12 +70,13 @@ main.homeMain {
                     align-items: center;
                     justify-content: center;
                     margin-right: 20px;
-                    i {
-                        font-size: 18px;
-                        color: #fff;
+                    img{
+                        width: 18px;
+                        height: 18px;
                     }
                 }
                 .nameCateg{
+                    text-transform: capitalize;
                     font-size: 18px;
                 }
                 .amountOp {
@@ -82,13 +84,13 @@ main.homeMain {
                     right: 5px;
                     .amount{
                         font-size: 18px;
-                        &.exp{
+                        &.e{
                             color: $red;
                             &::before{
                                 content: "- $";
                             }
                         }
-                        &.inc{
+                        &.i{
                             color: $green;
                             &::before{
                                 content: "+ $";

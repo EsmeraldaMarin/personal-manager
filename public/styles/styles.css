@@ -135,20 +135,19 @@ main.homeMain {
 
 main.homeMain .balanceSection {
   width: 100%;
-  margin: 20px 0 30px;
+  margin: 40px 0 30px;
   position: relative;
   text-align: center;
 }
 
 main.homeMain .balanceSection h2 {
   margin-bottom: 15px;
-  font-size: 1.8em;
+  font-size: 2.1em;
   font-weight: normal;
 }
 
 main.homeMain .balanceSection > p {
-  font-size: 2.1em;
-  font-weight: bold;
+  font-size: 2.5em;
 }
 
 main.homeMain .balanceSection .addOp {
@@ -185,6 +184,8 @@ main.homeMain .operationsSection h3 {
   margin: 0 5px;
   padding-bottom: 10px;
   border-bottom: 2px solid #ddd;
+  font-weight: normal;
+  font-size: 1.2em;
 }
 
 main.homeMain .operationsSection .listOperations {
@@ -216,12 +217,13 @@ main.homeMain .operationsSection .listOperations .operation .iconCateg {
   margin-right: 20px;
 }
 
-main.homeMain .operationsSection .listOperations .operation .iconCateg i {
-  font-size: 18px;
-  color: #fff;
+main.homeMain .operationsSection .listOperations .operation .iconCateg img {
+  width: 18px;
+  height: 18px;
 }
 
 main.homeMain .operationsSection .listOperations .operation .nameCateg {
+  text-transform: capitalize;
   font-size: 18px;
 }
 
@@ -234,19 +236,19 @@ main.homeMain .operationsSection .listOperations .operation .amountOp .amount {
   font-size: 18px;
 }
 
-main.homeMain .operationsSection .listOperations .operation .amountOp .amount.exp {
+main.homeMain .operationsSection .listOperations .operation .amountOp .amount.e {
   color: #be2323;
 }
 
-main.homeMain .operationsSection .listOperations .operation .amountOp .amount.exp::before {
+main.homeMain .operationsSection .listOperations .operation .amountOp .amount.e::before {
   content: "- $";
 }
 
-main.homeMain .operationsSection .listOperations .operation .amountOp .amount.inc {
+main.homeMain .operationsSection .listOperations .operation .amountOp .amount.i {
   color: #3db033;
 }
 
-main.homeMain .operationsSection .listOperations .operation .amountOp .amount.inc::before {
+main.homeMain .operationsSection .listOperations .operation .amountOp .amount.i::before {
   content: "+ $";
 }
 /*# sourceMappingURL=styles.css.map */
