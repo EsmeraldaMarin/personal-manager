@@ -1,7 +1,8 @@
 let connection = require('../connection');
 
-let selectOperations = (req, res) => {
-    let sql = `SELECT * FROM operations`;
+let selectOperationByUserId = (req, res) => {
+    let infoUser = req.params.user;
+    let sql = `SELECT * FROM operations WHERE user_id = ${infoUser.id}`;
 
     connection.query(sql, (err, operations) => {
         if (err) {
@@ -29,9 +30,11 @@ let selectOperations = (req, res) => {
         }
     })
 }
-let selectOperationByUserId = (req, res) => {
-    let userId = req.params.id;
-    let sql = `SELECT * FROM operations WHERE user_id = ${userId}`
+
+let selectOperationsById = (req, res) => {
+
+    let opId = req.params.id;
+    let sql = `SELECT * FROM operations WHERE id = ${opId}`
     connection.query(sql, function (err, operations) {
         if (err) {
             console.log(err)
@@ -57,6 +60,8 @@ let selectOperationByUserId = (req, res) => {
             });
         }
     })
+
+
 }
 
 let insertOperations = (req, res) => {
@@ -133,7 +138,7 @@ let deleteOperation = (req, res) => {
 }
 
 module.exports = {
-    selectOperations,
+    selectOperationsById,
     selectOperationByUserId,
     insertOperations,
     updateOperation,

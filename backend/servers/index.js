@@ -13,8 +13,9 @@ app.use(bodyParser.urlencoded({
 app.use(bodyParser.json());
 
 const { selectUsers, selectUserById, insertUser, logIn } = require('./controllers/users');
-const { selectOperations, selectOperationByUserId, insertOperations, updateOperation, deleteOperation } = require('./controllers/operations')
-const { selectCategories, selectCategoriesById, insertCategory, updateCategory } = require('./controllers/categories')
+const { selectOperationsById, selectOperationByUserId, insertOperations, updateOperation, deleteOperation } = require('./controllers/operations');
+const { selectCategories, selectCategoriesById, insertCategory, updateCategory } = require('./controllers/categories');
+const { defineRol } = require('./middlewares/validation')
 
 
 //ROUTES
@@ -26,8 +27,8 @@ app.post('/users', insertUser);
 app.post('/login', logIn);
 
 //operations
-app.get('/operations', selectOperations);
-app.get('/operations/:id', selectOperationByUserId);
+app.get('/operations', defineRol, selectOperationByUserId);
+app.get('/operations/:id', selectOperationsById);
 app.post('/operations', insertOperations);
 app.put('/operations/:id', updateOperation);
 app.delete('/operations/:id', deleteOperation);
