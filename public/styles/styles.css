@@ -1,10 +1,29 @@
 @import url("https://fonts.googleapis.com/css2?family=Questrial&display=swap");
+@keyframes slideIn {
+  0% {
+    transform: translateX(100vw);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideOut {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(100vw);
+  }
+}
+
 * {
   margin: 0;
   padding: 0;
   border-width: 0;
   box-sizing: border-box;
   font-family: "Questrial", sans-serif;
+  outline: none;
 }
 
 li {
@@ -250,5 +269,122 @@ main.homeMain .operationsSection .listOperations .operation .amountOp .amount.i 
 
 main.homeMain .operationsSection .listOperations .operation .amountOp .amount.i::before {
   content: "+ $";
+}
+
+.newOperationSection {
+  position: fixed;
+  top: 70px;
+  left: 0;
+  min-height: calc(100vh - 70px);
+  max-height: calc(100vh - 70px);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 40px 20px 20px;
+  z-index: 5;
+  background-color: #0f2f57;
+  color: #fff;
+  overflow: auto;
+  animation: slideIn 0.5s;
+}
+
+.newOperationSection.closeForm {
+  animation: slideOut 0.5s forwards;
+}
+
+.newOperationSection > img {
+  position: absolute;
+  left: 20px;
+  top: 40px;
+  width: 15px;
+  height: 15px;
+}
+
+.newOperationSection h2 {
+  font-weight: normal;
+  text-align: center;
+}
+
+.newOperationSection p {
+  margin: 30px 0 20px;
+}
+
+.newOperationSection .amountDiv {
+  margin: 15px auto;
+}
+
+.newOperationSection .amountDiv input {
+  margin-left: 5px;
+  width: 200px;
+  font-size: 26px;
+  color: #fff;
+  background-color: transparent;
+  text-align: center;
+  border-bottom: 2px solid #fff;
+}
+
+.newOperationSection .typeDiv label {
+  margin: 0 25px 0 5px;
+}
+
+.newOperationSection .categoryDiv .gridCategories {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-gap: 10px 20px;
+}
+
+.newOperationSection .categoryDiv .gridCategories li {
+  width: 50px;
+  height: 50px;
+  background-color: #cae6e8;
+  border-radius: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.newOperationSection .dateDiv input {
+  width: 150px;
+  font-size: 16px;
+  margin-right: 10px;
+  color: #fff;
+  background-color: transparent;
+  border-bottom: 2px solid #fff;
+}
+
+.newOperationSection .dateDiv input::placeholder {
+  color: #aaa;
+}
+
+.newOperationSection .commentaryDiv textarea {
+  width: 100%;
+  padding: 10px;
+  height: 60px;
+  border-radius: 15px;
+  font-size: 14px;
+}
+
+.newOperationSection .btnsDiv {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 25px;
+}
+
+.newOperationSection .btnsDiv button {
+  margin-left: 10px;
+  width: 100px;
+  height: 30px;
+  border-radius: 10px;
+  background-color: transparent;
+  color: #fff;
+}
+
+.newOperationSection .btnsDiv button.saveBtn {
+  background-color: #008891;
+}
+
+.newOperationSection .btnsDiv button:active {
+  background-color: #cae6e8;
 }
 /*# sourceMappingURL=styles.css.map */

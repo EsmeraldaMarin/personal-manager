@@ -6,6 +6,9 @@ let nav = document.querySelector('nav');
 
 let ulLastOperations = document.getElementById('listOperations');
 
+let addOperation = document.getElementById('addOperation');
+let header = document.querySelector('header')
+
 burguerBtn.addEventListener('click', () => {
     nav.classList.add('menuActive');
 
@@ -48,7 +51,6 @@ async function lastOperations() {
     last10Operations.forEach(op => {
         createLiOperations(op)
     });
-    console.log(last10Operations)
 }
 lastOperations()
 
@@ -67,3 +69,18 @@ function createLiOperations(op) {
     ulLastOperations.insertAdjacentHTML('afterbegin', htmlOperation);
 }
 
+//create a new operation
+
+addOperation.addEventListener('click', () => {
+
+    header.insertAdjacentHTML('afterend', formCreateOperation);
+    let form = document.querySelector('#newOperationSection')
+    let comeBackBtn = document.querySelector('#comeBackBtn');
+    comeBackBtn.addEventListener('click', () => {
+        form.classList.add('closeForm');
+        setTimeout(() => {
+            form.remove()
+        }, 700);
+    })
+
+})
