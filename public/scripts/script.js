@@ -10,7 +10,7 @@ let nav = document.querySelector('nav');
 
 let ulLastOperations = document.getElementById('listOperations');
 
-let header = document.querySelector('header')
+let header = document.querySelector('header');
 
 burguerBtn.addEventListener('click', () => {
     nav.classList.add('menuActive');
@@ -22,10 +22,7 @@ window.addEventListener('click', e => {
     }
 })
 
-
-
-
-function dateFormater(date) {
+let dateFormater = (date) => {
     let stringSeparator, formatedDate;
     if (date.includes('/')) {
         stringSeparator = date.split("/");
@@ -34,4 +31,11 @@ function dateFormater(date) {
     }
     formatedDate = `${stringSeparator[2]}/${stringSeparator[1]}/${stringSeparator[0]}`
     return formatedDate
+}
+
+let amountFormater = (allAmounts) => {
+    allAmounts.forEach(amount => {
+        let amountFormated = new Intl.NumberFormat().format(amount.textContent);
+        amount.textContent = amountFormated;
+    })
 }
