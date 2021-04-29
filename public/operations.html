@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href=https://use.fontawesome.com/releases/v5.13.0/css/all.css>
+    <link rel="stylesheet" href="styles/styles.css">
+    <title>My Personal Manager</title>
+</head>
+
+<body>
+    <header>
+        <div class="menuSection" id="burguerBtn">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <nav>
+            <div class="userInfo">
+                <img src="assets/imageUserExample.jpg" alt="user image">
+                <div>
+                    <p><span id="userName" class="usName">Esmeralda</span> <span id="userLastname">Marin</span></p>
+                    <p><span>Balance $</span><span id="userBalance">5000</span></p>
+                </div>
+            </div>
+            <ul>
+                <li>
+                    <a href="index.html"><i class="fas fa-home"></i>Home</a>
+                </li>
+                <li>
+                    <a href="operations.html"><i class="fas fa-money-bill-wave"></i>Operations</a>
+                </li>
+                <li>
+                    <a href=""><i class="fas fa-shapes"></i>Categories</a>
+                </li>
+                <li>
+                    <a href=""><i class="fas fa-chart-pie"></i>Graphics</a>
+                </li>
+            </ul>
+        </nav>
+        <img src="assets/logo.png" alt="Logo of the app">
+    </header>
+    <main class="operationsMain">
+        <div class="operationsSection">
+            <h2>My Operations</h2>
+            <div class="typeBtns">
+                <div class="expBtn activeType">EXPENSES</div>
+                <div class="incBtn">INCOME</div>
+            </div>
+            <div class="detailsOpSection">
+                <div class="addOp" id="addOperation">
+                    <i class="fas fa-plus"></i>
+                </div>
+                <div class="infoOp">
+                    <p class="dateOp">April 24-2021</p>
+                    <p class="totalOp"><span>$</span><span class="amount">4500</span></p>
+                </div>
+                <div class="allOperations">
+                    <h3>All Operations</h3>
+                    <span class="filterBtn">Filter</span>
+                    <ul id="operationsList" class="operationsList">
+                        <li class="operation">
+                            <div class="iconCateg">
+                                <img src="assets/icons/cinema.svg" alt="icon cinema" />
+                            </div>
+                            <p class="nameCateg">cinema</p>
+                            <p class="amountOp"><span class="amount e">200</span></p>
+                        </li>
+                        <li class="operation">
+                            <div class="iconCateg">
+                                <img src="assets/icons/cinema.svg" alt="icon cinema"/>
+                            </div>
+                            <p class="nameCateg">cinema</p>
+                            <p class="amountOp"><span class="amount e">200</span></p>
+                        </li> <li class="operation">
+                            <div class="iconCateg">
+                                <img src="assets/icons/cinema.svg" alt="icon cinema"/>
+                            </div>
+                            <p class="nameCateg">cinema</p>
+                            <p class="amountOp"><span class="amount e">200</span></p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+
+    </main>
+    <script src="scripts/htmlLayouts.js"></script>
+    <script src="scripts/script.js"></script>
+    <script src="scripts/operations/getOperations.js"></script>
+    <script src="scripts/categories/getCategories.js"></script>
+    <script src="scripts/operations/addOperations.js"></script>
+</body>
+
+</html>

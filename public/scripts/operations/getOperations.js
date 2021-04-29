@@ -36,7 +36,9 @@ async function lastOperations() {
         createLiOperations(op)
     });
 }
-lastOperations()
+if(ulLastOperations){
+    lastOperations()
+}
 
 function createLiOperations(op) {
     let categoryInfo = op.categoryInfo;
