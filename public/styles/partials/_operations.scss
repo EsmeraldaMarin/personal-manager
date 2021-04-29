@@ -1,114 +1,116 @@
-.operationsSection {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-    h2 {
-        margin: 40px;
-        font-size: 2.1em;
-        font-weight: normal;
-    }
-    .typeBtns {
+.operationsMain {
+    .operationsSection {
         display: flex;
-        justify-content: center;
-        width: 100%;
-        > div {
-            width: 48%;
-            height: 40px;
+        flex-direction: column;
+        align-items: center;
+
+        h2 {
+            margin: 40px;
+            font-size: 2.1em;
+            font-weight: normal;
+        }
+        .typeBtns {
             display: flex;
-            align-items: center;
             justify-content: center;
-            &.activeType {
-                border-radius: 15px 15px 0 0;
-                background-color: $color1;
-                color: #fff;
+            width: 100%;
+            > div {
+                width: 48%;
+                height: 40px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                &.activeType {
+                    border-radius: 15px 15px 0 0;
+                    background-color: $color1;
+                    color: #fff;
+                }
             }
         }
-    }
-    .detailsOpSection {
-        width: 100%;
-        min-height: calc(100vh - 140px);
-        padding: 40px 25px;
-        position: relative;
-        background-color: $color1;
-        color: #fff;
-        .addOp {
-            width: 40px;
-            height: 40px;
-            position: absolute;
-            top: 60px;
-            right: 25px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 25px;
-            background-color: $color2;
-            box-shadow: 0 0 5px #000;
-            i {
-                color: #fff;
-                font-size: 20px;
-            }
-            &:active {
-                background-color: $color3;
-            }
-        }
-        .infoOp {
-            .dateOp {
-                text-decoration: underline;
-            }
-            .totalOp {
-                margin: 20px 0;
-                font-size: 2.2em;
-            }
-        }
-        .allOperations {
-            margin-top: 40px;
+        .detailsOpSection {
+            width: 100%;
+            min-height: calc(100vh - 140px);
+            padding: 40px 25px;
             position: relative;
-            h3 {
-                font-weight: normal;
-                font-size: 16px;
-            }
-            .filterBtn {
-                font-size: 16px;
+            background-color: $color1;
+            color: #fff;
+            .addOp {
+                width: 40px;
+                height: 40px;
                 position: absolute;
-                right: 0;
-                top: 0;
-            }
-            .operationsList {
-                margin-top: 20px;
-                width: 100%;
-                .operation {
-                    padding: 7px 0px;
-                    display: flex;
-                    width: 100%;
-                    position: relative;
-                    align-items: center;
+                top: 60px;
+                right: 25px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-radius: 25px;
+                background-color: $color2;
+                box-shadow: 0 0 5px #000;
+                i {
+                    color: #fff;
                     font-size: 20px;
-                    .iconCateg {
-                        width: 40px;
-                        height: 40px;
-                        border-radius: 25px;
-                        background-color: $color2;
+                }
+                &:active {
+                    background-color: $color3;
+                }
+            }
+            .infoOp {
+                .dateOp {
+                    text-decoration: underline;
+                }
+                .totalOp {
+                    margin: 20px 0;
+                    font-size: 2.2em;
+                }
+            }
+            .allOperations {
+                margin-top: 40px;
+                position: relative;
+                h3 {
+                    font-weight: normal;
+                    font-size: 16px;
+                }
+                .filterBtn {
+                    font-size: 16px;
+                    position: absolute;
+                    right: 0;
+                    top: 0;
+                }
+                .operationsList {
+                    margin-top: 20px;
+                    width: 100%;
+                    .operation {
+                        padding: 7px 0px;
                         display: flex;
+                        width: 100%;
+                        position: relative;
                         align-items: center;
-                        justify-content: center;
-                        margin-right: 20px;
-                        img {
-                            width: 18px;
-                            height: 18px;
+                        font-size: 20px;
+                        .iconCateg {
+                            width: 40px;
+                            height: 40px;
+                            border-radius: 25px;
+                            background-color: $color2;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            margin-right: 20px;
+                            img {
+                                width: 18px;
+                                height: 18px;
+                            }
                         }
-                    }
-                    .nameCateg {
-                        text-transform: capitalize;
-                        font-size: 18px;
-                    }
-                    .amountOp {
-                        position: absolute;
-                        right: 5px;
-                        .amount {
+                        .nameCateg {
+                            text-transform: capitalize;
                             font-size: 18px;
-                            &::before {
-                                content: "$";
+                        }
+                        .amountOp {
+                            position: absolute;
+                            right: 5px;
+                            .amount {
+                                font-size: 18px;
+                                &::before {
+                                    content: "$";
+                                }
                             }
                         }
                     }

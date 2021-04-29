@@ -271,25 +271,25 @@ main.homeMain .operationsSection .listOperations .operation .amountOp .amount.i:
   content: "+ $";
 }
 
-.operationsSection {
+.operationsMain .operationsSection {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.operationsSection h2 {
+.operationsMain .operationsSection h2 {
   margin: 40px;
   font-size: 2.1em;
   font-weight: normal;
 }
 
-.operationsSection .typeBtns {
+.operationsMain .operationsSection .typeBtns {
   display: flex;
   justify-content: center;
   width: 100%;
 }
 
-.operationsSection .typeBtns > div {
+.operationsMain .operationsSection .typeBtns > div {
   width: 48%;
   height: 40px;
   display: flex;
@@ -297,13 +297,13 @@ main.homeMain .operationsSection .listOperations .operation .amountOp .amount.i:
   justify-content: center;
 }
 
-.operationsSection .typeBtns > div.activeType {
+.operationsMain .operationsSection .typeBtns > div.activeType {
   border-radius: 15px 15px 0 0;
   background-color: #0f2f57;
   color: #fff;
 }
 
-.operationsSection .detailsOpSection {
+.operationsMain .operationsSection .detailsOpSection {
   width: 100%;
   min-height: calc(100vh - 140px);
   padding: 40px 25px;
@@ -312,7 +312,7 @@ main.homeMain .operationsSection .listOperations .operation .amountOp .amount.i:
   color: #fff;
 }
 
-.operationsSection .detailsOpSection .addOp {
+.operationsMain .operationsSection .detailsOpSection .addOp {
   width: 40px;
   height: 40px;
   position: absolute;
@@ -326,47 +326,47 @@ main.homeMain .operationsSection .listOperations .operation .amountOp .amount.i:
   box-shadow: 0 0 5px #000;
 }
 
-.operationsSection .detailsOpSection .addOp i {
+.operationsMain .operationsSection .detailsOpSection .addOp i {
   color: #fff;
   font-size: 20px;
 }
 
-.operationsSection .detailsOpSection .addOp:active {
+.operationsMain .operationsSection .detailsOpSection .addOp:active {
   background-color: #cae6e8;
 }
 
-.operationsSection .detailsOpSection .infoOp .dateOp {
+.operationsMain .operationsSection .detailsOpSection .infoOp .dateOp {
   text-decoration: underline;
 }
 
-.operationsSection .detailsOpSection .infoOp .totalOp {
+.operationsMain .operationsSection .detailsOpSection .infoOp .totalOp {
   margin: 20px 0;
   font-size: 2.2em;
 }
 
-.operationsSection .detailsOpSection .allOperations {
+.operationsMain .operationsSection .detailsOpSection .allOperations {
   margin-top: 40px;
   position: relative;
 }
 
-.operationsSection .detailsOpSection .allOperations h3 {
+.operationsMain .operationsSection .detailsOpSection .allOperations h3 {
   font-weight: normal;
   font-size: 16px;
 }
 
-.operationsSection .detailsOpSection .allOperations .filterBtn {
+.operationsMain .operationsSection .detailsOpSection .allOperations .filterBtn {
   font-size: 16px;
   position: absolute;
   right: 0;
   top: 0;
 }
 
-.operationsSection .detailsOpSection .allOperations .operationsList {
+.operationsMain .operationsSection .detailsOpSection .allOperations .operationsList {
   margin-top: 20px;
   width: 100%;
 }
 
-.operationsSection .detailsOpSection .allOperations .operationsList .operation {
+.operationsMain .operationsSection .detailsOpSection .allOperations .operationsList .operation {
   padding: 7px 0px;
   display: flex;
   width: 100%;
@@ -375,7 +375,7 @@ main.homeMain .operationsSection .listOperations .operation .amountOp .amount.i:
   font-size: 20px;
 }
 
-.operationsSection .detailsOpSection .allOperations .operationsList .operation .iconCateg {
+.operationsMain .operationsSection .detailsOpSection .allOperations .operationsList .operation .iconCateg {
   width: 40px;
   height: 40px;
   border-radius: 25px;
@@ -386,26 +386,26 @@ main.homeMain .operationsSection .listOperations .operation .amountOp .amount.i:
   margin-right: 20px;
 }
 
-.operationsSection .detailsOpSection .allOperations .operationsList .operation .iconCateg img {
+.operationsMain .operationsSection .detailsOpSection .allOperations .operationsList .operation .iconCateg img {
   width: 18px;
   height: 18px;
 }
 
-.operationsSection .detailsOpSection .allOperations .operationsList .operation .nameCateg {
+.operationsMain .operationsSection .detailsOpSection .allOperations .operationsList .operation .nameCateg {
   text-transform: capitalize;
   font-size: 18px;
 }
 
-.operationsSection .detailsOpSection .allOperations .operationsList .operation .amountOp {
+.operationsMain .operationsSection .detailsOpSection .allOperations .operationsList .operation .amountOp {
   position: absolute;
   right: 5px;
 }
 
-.operationsSection .detailsOpSection .allOperations .operationsList .operation .amountOp .amount {
+.operationsMain .operationsSection .detailsOpSection .allOperations .operationsList .operation .amountOp .amount {
   font-size: 18px;
 }
 
-.operationsSection .detailsOpSection .allOperations .operationsList .operation .amountOp .amount::before {
+.operationsMain .operationsSection .detailsOpSection .allOperations .operationsList .operation .amountOp .amount::before {
   content: "$";
 }
 
