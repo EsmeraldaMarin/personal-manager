@@ -35,13 +35,13 @@ let selectOperationsById = (req, res) => {
 
     let opId = req.params.id;
     let sql = `SELECT * FROM operations WHERE id = ${opId}`
-    connection.query(sql, function (err, operations) {
+    connection.query(sql, function (err, operation) {
         if (err) {
             console.log(err)
             res.status(500).json({ error: 'Internal error' });
 
         } else {
-            operations.forEach(op => {
+            operation.forEach(op => {
                 let sqlCategory = `SELECT * FROM categories WHERE id = ${op.category_id}`
                 connection.query(sqlCategory, (err, category) => {
 
@@ -52,8 +52,8 @@ let selectOperationsById = (req, res) => {
                     } else {
                         op.categoryInfo = category[0];
 
-                        if (op == operations[operations.length - 1]) {
-                            res.send(operations)
+                        if (op == operation[operation.length - 1]) {
+                            res.send(operation[0])
                         }
                     }
                 });

@@ -47,12 +47,10 @@ addOperation.forEach(addOp => {
             }, 700);
         })
         form.addEventListener('submit', e => {
-            e.preventDefault();
             let formData = new FormData(e.currentTarget);
             let categorySelected = document.querySelector('li.selected').id;
-            console.log(categorySelected)
 
-            formData.set('category_id', 7);
+            formData.set('category_id', categorySelected);
             if (formData.get("type") == 'expense') {
                 formData.set('type', 'e');
             } else {

@@ -39,3 +39,47 @@ let amountFormater = (allAmounts) => {
         amount.textContent = amountFormated;
     })
 }
+
+//date formater from YYYY-MM-DD to MONTH DD - YYYY
+
+let dateFormaterFromDB = (dateFromDB, definer) => {
+    let date = new Date(dateFromDB);
+    let day = date.getDate();
+    let month = date.getMonth();
+    let year = date.getFullYear();
+    let newDate;
+    if (definer == 1) {
+        switch (month) {
+            case 0: month = "January";
+                break;
+            case 1: month = "February";
+                break;
+            case 2: month = "March";
+                break;
+            case 3: month = "April";
+                break;
+            case 4: month = "May";
+                break;
+            case 5: month = "June";
+                break;
+            case 6: month = "July";
+                break;
+            case 7: month = "August";
+                break;
+            case 8: month = "September";
+                break;
+            case 9: month = "October";
+                break;
+            case 10: month = "November";
+                break;
+            case 11: month = "December";
+                break;
+        }
+
+        newDate = `${month} ${day} - ${year}`;
+    } else if (definer == 2) {
+        newDate = `${day}/${month + 1}/${year}`
+    }
+
+    return newDate
+}

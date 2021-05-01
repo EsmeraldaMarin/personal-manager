@@ -48,7 +48,7 @@ function createLiOperations(op, parent) {
     let categoryInfo = op.categoryInfo;
     op.amount = new Intl.NumberFormat().format(op.amount)
     let htmlOperation = `
-        <li class="operation">
+        <li class="operation ${op.type}" id="${op.id}">
             <div class="iconCateg" style="background-color: #${categoryInfo.color};">
                 <img src="assets/icons/${categoryInfo.icon}" alt="icon ${categoryInfo.name}"/>
             </div>
@@ -102,7 +102,7 @@ async function operationsByType() {
     // sum of expenses amounts and creation of li 
     expOperations.forEach(op => {
         amountArrE.push(op.amount)
-        createLiOperations(op, expSec.querySelector('#operationsList'))
+        createLiOperations(op, expSec.querySelector('.operationsList'))
     });
     let totalExp = bigSum(amountArrE)
     expSec.querySelector('.amount').textContent = totalExp;
@@ -110,20 +110,22 @@ async function operationsByType() {
     // sum of incomes amounts and creation of li 
     incOperations.forEach(op => {
         amountArrI.push(op.amount)
-        createLiOperations(op, incSec.querySelector('#operationsList'))
+        createLiOperations(op, incSec.querySelector('.operationsList'))
     });
     let totalInc = bigSum(amountArrI);
     incSec.querySelector('.amount').textContent = totalInc;
 
     //apply the last date registered
 
-    let dateE = new Date(expOperations[0].date);
-    let formatedDateE = dateFormaterFromDB(dateE)
+    let formatedDateE = dateFormaterFromDB(expOperations[0].date, 1)
     expSec.querySelector('.dateOp').textContent = formatedDateE;
 
-    let dateI = new Date(incOperations[0].date);
-    let formatedDateI = dateFormaterFromDB(dateI)
+    let formatedDateI = dateFormaterFromDB(incOperations[0].date, 1)
     incSec.querySelector('.dateOp').textContent = formatedDateI;
+
+    //eventListener of li operations
+    let liOperations = document.querySelectorAll('li.operation');
+    operationDetails(liOperations);
 }
 if (expSec) {
     operationsByType()
@@ -142,42 +144,5 @@ let bigSum = arr => {
     return resSum
 }
 
-//date formater from YYYY-MM-DD to MONTH DD - YYYY
 
-let dateFormaterFromDB = date => {
-    let day = date.getDate();
-    let month = date.getMonth();
-    let year = date.getFullYear();
-    let newDate;
-    switch (month) {
-        case 0: month = "January";
-            break;
-        case 1: month = "February";
-            break;
-        case 2: month = "March";
-            break;
-        case 3: month = "April";
-            break;
-        case 4: month = "May";
-            break;
-        case 5: month = "June";
-            break;
-        case 6: month = "July";
-            break;
-        case 7: month = "August";
-            break;
-        case 8: month = "September";
-            break;
-        case 9: month = "October";
-            break;
-        case 10: month = "November";
-            break;
-        case 11: month = "December";
-            break;
-    }
-
-    newDate = `${month} ${day} - ${year}`;
-
-    return newDate
-}
 
