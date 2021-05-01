@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Questrial&display=swap");
 @keyframes slideIn {
   0% {
@@ -641,11 +642,22 @@ main.homeMain .operationsSection .listOperations .operation .amountOp .amount.i:
   margin: 0 25px 0 5px;
 }
 
+.newOperationSection .categoryDiv p {
+  position: relative;
+}
+
+.newOperationSection .categoryDiv p::after {
+  content: "Slide →";
+  position: absolute;
+  right: 20px;
+  font-size: 12px;
+}
+
 .newOperationSection .categoryDiv .gridCategories {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(2, 1fr);
   grid-gap: 10px 20px;
+  overflow: auto;
 }
 
 .newOperationSection .categoryDiv .gridCategories li {

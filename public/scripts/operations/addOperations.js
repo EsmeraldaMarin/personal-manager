@@ -11,6 +11,12 @@ addOperation.forEach(addOp => {
         let categories = get7Categories();
         let catSelected = false;
         categories.then(res => {
+            let numberOfCategories = res.length;
+            if (numberOfCategories % 2 == 0) {
+                ulCategories.style.gridTemplateColumns = `repeat(${numberOfCategories / 2}, 75px)`
+            } else{
+                ulCategories.style.gridTemplateColumns = `repeat(${(numberOfCategories + 1) / 2}, 75px)`
+            }
             res.forEach(cat => {
                 let element = `
                 <li id=${cat.id}><div><img src="assets/icons/${cat.icon}" alt="icon - ${cat.name}"></div><span>${cat.name}</span></li>
@@ -72,7 +78,7 @@ addOperation.forEach(addOp => {
                     if (res.status == 400) {
                         console.log('Unexpected Error')
                     } else {
-                        console.log(res)
+                        location.reload()
                     }
                 })
                 .catch(err => console.log(err))
