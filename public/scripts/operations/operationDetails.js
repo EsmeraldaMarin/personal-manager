@@ -73,9 +73,25 @@ let opActions = (form, id) => {
 
         let dateFormated = dateFormater(formData.get('date'));
         formData.set('date', dateFormated);
-        console.log(formData.get('date'))
         params.method = "PUT";
         params.body = formData;
+
+        let confirmModal = adviseModal('edit');
+
+        document.body.insertAdjacentHTML('afterbegin', confirmModal);
+
+        let modal = document.querySelector('.adviceModal')
+        let cancelBtn = document.querySelector('.cancelBtn');
+        let confirmBtn = document.querySelector('.confirmBtn');
+        cancelBtn.addEventListener('click', () => {
+            modal.remove()
+        })
+        confirmBtn.addEventListener('click', () => {
+            modal.remove();
+            fetch(`${urlOperations}/${id}`, params)
+                .then(res => res.json())
+                .then(location.reload());
+        })
 
     })
 }
