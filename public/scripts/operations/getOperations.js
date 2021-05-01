@@ -104,7 +104,8 @@ async function operationsByType() {
         amountArrE.push(op.amount)
         createLiOperations(op, expSec.querySelector('.operationsList'))
     });
-    let totalExp = bigSum(amountArrE)
+    let totalExp = bigSum(amountArrE);
+    totalExp = new Intl.NumberFormat().format(totalExp);
     expSec.querySelector('.amount').textContent = totalExp;
 
     // sum of incomes amounts and creation of li 
@@ -113,6 +114,7 @@ async function operationsByType() {
         createLiOperations(op, incSec.querySelector('.operationsList'))
     });
     let totalInc = bigSum(amountArrI);
+    totalInc = new Intl.NumberFormat().format(totalInc);
     incSec.querySelector('.amount').textContent = totalInc;
 
     //apply the last date registered
@@ -140,9 +142,41 @@ let bigSum = arr => {
         resSum += num
     })
     resSum = resSum.toFixed(2);
-    resSum = new Intl.NumberFormat().format(resSum)
     return resSum
 }
 
+async function getBalance() {
+    let allOperations = await getOperations();
+    let amountArrE = [];
+    let amountArrI = [];
+    let totalBalance;
+    let totalBalanceHTML = document.querySelector('#totalBalance .amount');
+    let userBalanceHTML =document.querySelector('#userBalance')
 
 
+    //divide expenses and incomes
+    let expOperations = allOperations.filter(op => op.type == "e");
+    let incOperations = allOperations.filter(op => op.type == "i");
+
+
+    // sum of expenses amounts and creation of li 
+    expOperations.forEach(op => {
+        amountArrE.push(op.amount)
+    });
+    let totalExp = bigSum(amountArrE)
+
+    // sum of incomes amounts and creation of li 
+    incOperations.forEach(op => {
+        amountArrI.push(op.amount)
+    });
+    let totalInc = bigSum(amountArrI);
+
+    totalBalance = totalInc - totalExp;
+    totalBalance = totalBalance.toFixed(2);
+    totalBalance = new Intl.NumberFormat().format(totalBalance);
+
+    totalBalanceHTML.textContent = totalBalance;
+    userBalanceHTML.textContent = totalBalance;
+}
+
+getBalance()
