@@ -39,7 +39,7 @@ header {
         background-color: $color2;
         transition: width 0.5s ease;
         @media (min-width: $breakpoint) {
-            width: auto;
+            width: 20%;
         }
         &.menuActive {
             width: 70%;
@@ -52,6 +52,7 @@ header {
             border-bottom: 1px solid #fff;
             align-items: center;
             min-width: 250px;
+            font-size: 1.2em;
             img {
                 width: 40px;
                 height: 40px;
@@ -74,6 +75,9 @@ header {
                 p:last-child {
                     span:first-child {
                         font-size: 14px;
+                        @media (min-width: $breakpoint) {
+                           font-size: .9em;
+                        }
                     }
                 }
             }
@@ -89,7 +93,9 @@ header {
                     height: 100%;
                     color: #fff;
                     display: flex;
-
+                    @media (min-width: $breakpoint) {
+                        font-size: 1.2em;
+                    }
                     i {
                         color: #fff;
                         margin-right: 10px;

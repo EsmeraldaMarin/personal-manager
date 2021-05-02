@@ -17,6 +17,7 @@
         width: 35%;
         right: 0;
         left: inherit;
+        box-shadow: 0 0 5px #000;
     }
     &.closeForm {
         animation: slideOut 0.5s forwards;

@@ -79,3 +79,31 @@ body {
         margin-right: 50px;
     }
 }
+
+//secondHeader
+
+.secondHeader {
+    display: none;
+    @media (min-width: $breakpoint) {
+        width: 100%;
+        height: 70px;
+        padding: 0 50px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background-color: $color3;
+        .title {
+            font-size: 1.5em;
+            a {
+                color: #000;
+            }
+        }
+        .logOut {
+            font-size: 1.2em;
+            &:hover {
+                text-decoration: underline;
+                color: $color2;
+            }
+        }
+    }
+}

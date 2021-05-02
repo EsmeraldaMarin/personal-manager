@@ -109,6 +109,35 @@ a {
   }
 }
 
+.secondHeader {
+  display: none;
+}
+
+@media (min-width: 1024px) {
+  .secondHeader {
+    width: 100%;
+    height: 70px;
+    padding: 0 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #cae6e8;
+  }
+  .secondHeader .title {
+    font-size: 1.5em;
+  }
+  .secondHeader .title a {
+    color: #000;
+  }
+  .secondHeader .logOut {
+    font-size: 1.2em;
+  }
+  .secondHeader .logOut:hover {
+    text-decoration: underline;
+    color: #008891;
+  }
+}
+
 header {
   display: flex;
   justify-content: space-between;
@@ -163,7 +192,7 @@ header nav {
 
 @media (min-width: 1024px) {
   header nav {
-    width: auto;
+    width: 20%;
   }
 }
 
@@ -179,6 +208,7 @@ header nav .userInfo {
   border-bottom: 1px solid #fff;
   align-items: center;
   min-width: 250px;
+  font-size: 1.2em;
 }
 
 header nav .userInfo img {
@@ -210,6 +240,12 @@ header nav .userInfo > div p:last-child span:first-child {
   font-size: 14px;
 }
 
+@media (min-width: 1024px) {
+  header nav .userInfo > div p:last-child span:first-child {
+    font-size: .9em;
+  }
+}
+
 header nav ul {
   display: flex;
   flex-direction: column;
@@ -225,6 +261,12 @@ header nav ul li a {
   height: 100%;
   color: #fff;
   display: flex;
+}
+
+@media (min-width: 1024px) {
+  header nav ul li a {
+    font-size: 1.2em;
+  }
 }
 
 header nav ul li a i {
@@ -245,35 +287,6 @@ main.homeMain {
   display: flex;
   flex-direction: column;
   align-items: center;
-}
-
-main.homeMain .secondHeader {
-  display: none;
-}
-
-@media (min-width: 1024px) {
-  main.homeMain .secondHeader {
-    width: 100%;
-    height: 70px;
-    padding: 0 50px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background-color: #cae6e8;
-  }
-  main.homeMain .secondHeader .title {
-    font-size: 1.5em;
-  }
-  main.homeMain .secondHeader .title a {
-    color: #000;
-  }
-  main.homeMain .secondHeader .logOut {
-    font-size: 1.2em;
-  }
-  main.homeMain .secondHeader .logOut:hover {
-    text-decoration: underline;
-    color: #008891;
-  }
 }
 
 main.homeMain .balanceSection {
@@ -472,10 +485,23 @@ main.homeMain .operationsSection .listOperations .operation .amountOp .amount.i:
   align-items: center;
 }
 
+@media (min-width: 1024px) {
+  .operationsMain .operationsSection {
+    padding: 0 50px;
+  }
+}
+
 .operationsMain .operationsSection h2 {
   margin: 40px;
   font-size: 2.1em;
   font-weight: normal;
+}
+
+@media (min-width: 1024px) {
+  .operationsMain .operationsSection h2 {
+    margin: 80px 0 60px;
+    font-size: 2.5em;
+  }
 }
 
 .operationsMain .operationsSection .typeBtns {
@@ -483,6 +509,12 @@ main.homeMain .operationsSection .listOperations .operation .amountOp .amount.i:
   justify-content: center;
   width: 100%;
   margin-bottom: -2px;
+}
+
+@media (min-width: 1024px) {
+  .operationsMain .operationsSection .typeBtns {
+    justify-content: flex-start;
+  }
 }
 
 .operationsMain .operationsSection .typeBtns > div {
@@ -493,10 +525,24 @@ main.homeMain .operationsSection .listOperations .operation .amountOp .amount.i:
   justify-content: center;
 }
 
+@media (min-width: 1024px) {
+  .operationsMain .operationsSection .typeBtns > div {
+    width: 20%;
+    font-size: 22px;
+    height: 60px;
+  }
+}
+
 .operationsMain .operationsSection .typeBtns > div.activeType {
   border-radius: 15px 15px 0 0;
   background-color: #0f2f57;
   color: #fff;
+}
+
+@media (min-width: 1024px) {
+  .operationsMain .operationsSection .typeBtns > div.activeType {
+    border-radius: 0;
+  }
 }
 
 .operationsMain .operationsSection > div.ctnOp {
@@ -525,6 +571,13 @@ main.homeMain .operationsSection .listOperations .operation .amountOp .amount.i:
   color: #fff;
 }
 
+@media (min-width: 1024px) {
+  .operationsMain .operationsSection > div.ctnOp .opSelectedDetails {
+    padding: 60px;
+    min-width: calc(100vw - 25% - 100px);
+  }
+}
+
 .operationsMain .operationsSection > div.ctnOp .opSelectedDetails .comeBackBtn {
   position: absolute;
   left: 20px;
@@ -533,14 +586,30 @@ main.homeMain .operationsSection .listOperations .operation .amountOp .amount.i:
   height: 15px;
 }
 
+@media (min-width: 1024px) {
+  .operationsMain .operationsSection > div.ctnOp .opSelectedDetails .comeBackBtn {
+    top: 60px;
+    left: 60px;
+    width: 25px;
+    height: 25px;
+  }
+}
+
 .operationsMain .operationsSection > div.ctnOp .opSelectedDetails .iconCateg {
   width: 40px;
   height: 40px;
-  border-radius: 25px;
+  border-radius: 40px;
   background-color: #008891;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+@media (min-width: 1024px) {
+  .operationsMain .operationsSection > div.ctnOp .opSelectedDetails .iconCateg {
+    width: 70px;
+    height: 70px;
+  }
 }
 
 .operationsMain .operationsSection > div.ctnOp .opSelectedDetails .iconCateg img {
@@ -554,6 +623,13 @@ main.homeMain .operationsSection .listOperations .operation .amountOp .amount.i:
   text-transform: capitalize;
 }
 
+@media (min-width: 1024px) {
+  .operationsMain .operationsSection > div.ctnOp .opSelectedDetails .categoryName {
+    font-size: 1.6em;
+    margin: 20px 0 30px;
+  }
+}
+
 .operationsMain .operationsSection > div.ctnOp .opSelectedDetails .totalOp input {
   background-color: transparent;
   border-bottom: 2px solid #fff;
@@ -564,6 +640,12 @@ main.homeMain .operationsSection .listOperations .operation .amountOp .amount.i:
   margin: 10px;
 }
 
+@media (min-width: 1024px) {
+  .operationsMain .operationsSection > div.ctnOp .opSelectedDetails .totalOp input {
+    font-size: 36px;
+  }
+}
+
 .operationsMain .operationsSection > div.ctnOp .opSelectedDetails .dateOp {
   background-color: transparent;
   text-align: center;
@@ -572,20 +654,45 @@ main.homeMain .operationsSection .listOperations .operation .amountOp .amount.i:
   text-decoration: underline;
 }
 
+@media (min-width: 1024px) {
+  .operationsMain .operationsSection > div.ctnOp .opSelectedDetails .dateOp {
+    font-size: 1.2em;
+  }
+}
+
 .operationsMain .operationsSection > div.ctnOp .opSelectedDetails .commentsDiv {
   width: 100%;
+}
+
+@media (min-width: 1024px) {
+  .operationsMain .operationsSection > div.ctnOp .opSelectedDetails .commentsDiv {
+    width: 60%;
+  }
 }
 
 .operationsMain .operationsSection > div.ctnOp .opSelectedDetails .commentsDiv p {
   margin-bottom: 10px;
 }
 
+@media (min-width: 1024px) {
+  .operationsMain .operationsSection > div.ctnOp .opSelectedDetails .commentsDiv p {
+    font-size: 20px;
+  }
+}
+
 .operationsMain .operationsSection > div.ctnOp .opSelectedDetails .commentsDiv textarea {
   width: 100%;
-  padding: 10px;
+  padding: 20px;
   height: 110px;
   border-radius: 15px;
   font-size: 14px;
+}
+
+@media (min-width: 1024px) {
+  .operationsMain .operationsSection > div.ctnOp .opSelectedDetails .commentsDiv textarea {
+    height: 200px;
+    font-size: 20px;
+  }
 }
 
 .operationsMain .operationsSection > div.ctnOp .opSelectedDetails .btnsDiv {
@@ -595,6 +702,13 @@ main.homeMain .operationsSection .listOperations .operation .amountOp .amount.i:
   margin-top: 15px;
 }
 
+@media (min-width: 1024px) {
+  .operationsMain .operationsSection > div.ctnOp .opSelectedDetails .btnsDiv {
+    width: 60%;
+    margin-top: 30px;
+  }
+}
+
 .operationsMain .operationsSection > div.ctnOp .opSelectedDetails .btnsDiv button {
   margin-left: 10px;
   width: 100px;
@@ -602,6 +716,15 @@ main.homeMain .operationsSection .listOperations .operation .amountOp .amount.i:
   border-radius: 10px;
   background-color: transparent;
   color: #fff;
+}
+
+@media (min-width: 1024px) {
+  .operationsMain .operationsSection > div.ctnOp .opSelectedDetails .btnsDiv button {
+    width: 170px;
+    height: 50px;
+    border-radius: 20px;
+    font-size: 20px;
+  }
 }
 
 .operationsMain .operationsSection > div.ctnOp .opSelectedDetails .btnsDiv button.deleteBtn {
@@ -621,6 +744,13 @@ main.homeMain .operationsSection .listOperations .operation .amountOp .amount.i:
   color: #fff;
 }
 
+@media (min-width: 1024px) {
+  .operationsMain .operationsSection > div.ctnOp .detailsOpSection {
+    min-width: calc(100vw - 25% - 100px);
+    padding: 60px;
+  }
+}
+
 .operationsMain .operationsSection > div.ctnOp .detailsOpSection .addOp {
   width: 40px;
   height: 40px;
@@ -633,6 +763,15 @@ main.homeMain .operationsSection .listOperations .operation .amountOp .amount.i:
   border-radius: 25px;
   background-color: #008891;
   box-shadow: 0 0 5px #000;
+}
+
+@media (min-width: 1024px) {
+  .operationsMain .operationsSection > div.ctnOp .detailsOpSection .addOp {
+    width: 50px;
+    height: 50px;
+    right: 75px;
+    top: 100px;
+  }
 }
 
 .operationsMain .operationsSection > div.ctnOp .detailsOpSection .addOp i {
@@ -664,13 +803,26 @@ main.homeMain .operationsSection .listOperations .operation .amountOp .amount.i:
   transition: transform 0.45s linear;
 }
 
+@media (min-width: 1024px) {
+  .operationsMain .operationsSection > div.ctnOp .detailsOpSection.incSec.activeSection {
+    transform: translateX(calc(-100vw + 25% + 100px));
+  }
+}
+
 .operationsMain .operationsSection > div.ctnOp .detailsOpSection .infoOp .dateOp {
   text-decoration: underline;
+  color: #fff;
 }
 
 .operationsMain .operationsSection > div.ctnOp .detailsOpSection .infoOp .totalOp {
   margin: 20px 0;
   font-size: 2.2em;
+}
+
+@media (min-width: 1024px) {
+  .operationsMain .operationsSection > div.ctnOp .detailsOpSection .infoOp .totalOp {
+    font-size: 3em;
+  }
 }
 
 .operationsMain .operationsSection > div.ctnOp .detailsOpSection .allOperations {
@@ -681,6 +833,14 @@ main.homeMain .operationsSection .listOperations .operation .amountOp .amount.i:
 .operationsMain .operationsSection > div.ctnOp .detailsOpSection .allOperations h3 {
   font-weight: normal;
   font-size: 16px;
+}
+
+@media (min-width: 1024px) {
+  .operationsMain .operationsSection > div.ctnOp .detailsOpSection .allOperations h3 {
+    font-size: 20px;
+    padding: 10px 0;
+    border-bottom: 2px solid #cae6e8;
+  }
 }
 
 .operationsMain .operationsSection > div.ctnOp .detailsOpSection .allOperations .operationsList {
@@ -697,6 +857,16 @@ main.homeMain .operationsSection .listOperations .operation .amountOp .amount.i:
   font-size: 20px;
 }
 
+@media (min-width: 1024px) {
+  .operationsMain .operationsSection > div.ctnOp .detailsOpSection .allOperations .operationsList .operation {
+    padding: 10px 0;
+  }
+}
+
+.operationsMain .operationsSection > div.ctnOp .detailsOpSection .allOperations .operationsList .operation .dateOp {
+  color: #fff;
+}
+
 .operationsMain .operationsSection > div.ctnOp .detailsOpSection .allOperations .operationsList .operation .iconCateg {
   width: 40px;
   height: 40px;
@@ -706,6 +876,13 @@ main.homeMain .operationsSection .listOperations .operation .amountOp .amount.i:
   align-items: center;
   justify-content: center;
   margin-right: 20px;
+}
+
+@media (min-width: 1024px) {
+  .operationsMain .operationsSection > div.ctnOp .detailsOpSection .allOperations .operationsList .operation .iconCateg {
+    width: 50px;
+    height: 50px;
+  }
 }
 
 .operationsMain .operationsSection > div.ctnOp .detailsOpSection .allOperations .operationsList .operation .iconCateg img {
@@ -718,6 +895,12 @@ main.homeMain .operationsSection .listOperations .operation .amountOp .amount.i:
   font-size: 18px;
 }
 
+@media (min-width: 1024px) {
+  .operationsMain .operationsSection > div.ctnOp .detailsOpSection .allOperations .operationsList .operation .nameCateg {
+    font-size: 24px;
+  }
+}
+
 .operationsMain .operationsSection > div.ctnOp .detailsOpSection .allOperations .operationsList .operation .amountOp {
   position: absolute;
   right: 5px;
@@ -725,6 +908,12 @@ main.homeMain .operationsSection .listOperations .operation .amountOp .amount.i:
 
 .operationsMain .operationsSection > div.ctnOp .detailsOpSection .allOperations .operationsList .operation .amountOp .amount {
   font-size: 18px;
+}
+
+@media (min-width: 1024px) {
+  .operationsMain .operationsSection > div.ctnOp .detailsOpSection .allOperations .operationsList .operation .amountOp .amount {
+    font-size: 24px;
+  }
 }
 
 .operationsMain .operationsSection > div.ctnOp .detailsOpSection .allOperations .operationsList .operation .amountOp .amount::before {
@@ -753,6 +942,7 @@ main.homeMain .operationsSection .listOperations .operation .amountOp .amount.i:
     width: 35%;
     right: 0;
     left: inherit;
+    box-shadow: 0 0 5px #000;
   }
 }
 

@@ -3,27 +3,44 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-
+        @media (min-width: $breakpoint) {
+            padding: 0 50px;
+        }
         h2 {
             margin: 40px;
             font-size: 2.1em;
             font-weight: normal;
+            @media (min-width: $breakpoint) {
+                margin:  80px 0 60px;
+                font-size: 2.5em;
+            }
         }
         .typeBtns {
             display: flex;
             justify-content: center;
             width: 100%;
             margin-bottom: -2px;
+            @media (min-width: $breakpoint) {
+                justify-content: flex-start;
+            }
             > div {
                 width: 48%;
                 height: 40px;
                 display: flex;
                 align-items: center;
                 justify-content: center;
+                @media (min-width: $breakpoint) {
+                    width: 20%;
+                    font-size: 22px;
+                    height: 60px;
+                }
                 &.activeType {
                     border-radius: 15px 15px 0 0;
                     background-color: $color1;
                     color: #fff;
+                    @media (min-width: $breakpoint) {
+                        border-radius: 0;
+                    }
                 }
             }
         }
@@ -33,7 +50,7 @@
             overflow: hidden;
             background-color: $color1;
             position: relative;
-            &.fixedHeight{
+            &.fixedHeight {
                 max-height: 500px;
             }
             .opSelectedDetails {
@@ -48,22 +65,35 @@
                 align-items: center;
                 background-color: $color1;
                 color: #fff;
-
+                @media (min-width: $breakpoint) {
+                    padding: 60px;
+                    min-width: calc(100vw - 25% - 100px);
+                }
                 .comeBackBtn {
                     position: absolute;
                     left: 20px;
                     top: 40px;
                     width: 15px;
                     height: 15px;
+                    @media (min-width: $breakpoint) {
+                        top: 60px;
+                        left: 60px;
+                        width: 25px;
+                        height: 25px;
+                    }
                 }
                 .iconCateg {
                     width: 40px;
                     height: 40px;
-                    border-radius: 25px;
+                    border-radius: 40px;
                     background-color: $color2;
                     display: flex;
                     align-items: center;
                     justify-content: center;
+                    @media (min-width: $breakpoint) {
+                        width: 70px;
+                        height: 70px;
+                    }
                     img {
                         width: 18px;
                         height: 18px;
@@ -73,6 +103,10 @@
                     font-size: 1.3em;
                     margin: 10px 0;
                     text-transform: capitalize;
+                    @media (min-width: $breakpoint) {
+                        font-size: 1.6em;
+                        margin: 20px 0 30px;
+                    }
                 }
                 .totalOp {
                     input {
@@ -83,6 +117,9 @@
                         width: 150px;
                         text-align: center;
                         margin: 10px;
+                        @media (min-width: $breakpoint) {
+                            font-size: 36px;
+                        }
                     }
                 }
                 .dateOp {
@@ -91,18 +128,31 @@
                     color: #fff;
                     margin: 10px 0 30px;
                     text-decoration: underline;
+                    @media (min-width: $breakpoint) {
+                        font-size: 1.2em;
+                    }
                 }
                 .commentsDiv {
                     width: 100%;
+                    @media (min-width: $breakpoint) {
+                        width: 60%;
+                    }
                     p {
                         margin-bottom: 10px;
+                        @media (min-width: $breakpoint) {
+                            font-size: 20px;
+                        }
                     }
                     textarea {
                         width: 100%;
-                        padding: 10px;
+                        padding: 20px;
                         height: 110px;
                         border-radius: 15px;
                         font-size: 14px;
+                        @media (min-width: $breakpoint) {
+                            height: 200px;
+                            font-size: 20px;
+                        }
                     }
                 }
                 .btnsDiv {
@@ -110,6 +160,10 @@
                     display: flex;
                     justify-content: flex-end;
                     margin-top: 15px;
+                    @media (min-width: $breakpoint) {
+                        width: 60%;
+                        margin-top: 30px;
+                    }
                     button {
                         margin-left: 10px;
                         width: 100px;
@@ -117,6 +171,12 @@
                         border-radius: 10px;
                         background-color: transparent;
                         color: #fff;
+                        @media (min-width: $breakpoint) {
+                            width: 170px;
+                            height: 50px;
+                            border-radius: 20px;
+                            font-size: 20px;
+                        }
                         &.deleteBtn {
                             background-color: $red;
                         }
@@ -133,6 +193,10 @@
                 position: relative;
                 background-color: $color1;
                 color: #fff;
+                @media (min-width: $breakpoint) {
+                    min-width: calc(100vw - 25% - 100px);
+                    padding: 60px;
+                }
                 .addOp {
                     width: 40px;
                     height: 40px;
@@ -145,6 +209,12 @@
                     border-radius: 25px;
                     background-color: $color2;
                     box-shadow: 0 0 5px #000;
+                    @media (min-width: $breakpoint) {
+                        width: 50px;
+                        height: 50px;
+                        right: 75px;
+                        top: 100px;
+                    }
                     i {
                         color: #fff;
                         font-size: 20px;
@@ -167,15 +237,22 @@
                     &.activeSection {
                         transform: translateX(-100vw);
                         transition: transform 0.45s linear;
+                        @media (min-width: $breakpoint) {
+                            transform: translateX(calc(-100vw + 25% + 100px));
+                        }
                     }
                 }
                 .infoOp {
                     .dateOp {
                         text-decoration: underline;
+                        color: #fff;
                     }
                     .totalOp {
                         margin: 20px 0;
                         font-size: 2.2em;
+                        @media (min-width: $breakpoint) {
+                            font-size: 3em;
+                        }
                     }
                 }
                 .allOperations {
@@ -184,6 +261,11 @@
                     h3 {
                         font-weight: normal;
                         font-size: 16px;
+                        @media (min-width: $breakpoint) {
+                            font-size: 20px;
+                            padding: 10px 0;
+                            border-bottom: 2px solid $color3;
+                        }
                     }
 
                     .operationsList {
@@ -196,6 +278,12 @@
                             position: relative;
                             align-items: center;
                             font-size: 20px;
+                            @media (min-width: $breakpoint) {
+                                padding: 10px 0;
+                            }
+                            .dateOp {
+                                color: #fff;
+                            }
                             .iconCateg {
                                 width: 40px;
                                 height: 40px;
@@ -205,6 +293,10 @@
                                 align-items: center;
                                 justify-content: center;
                                 margin-right: 20px;
+                                @media (min-width: $breakpoint) {
+                                    width: 50px;
+                                    height: 50px;
+                                }
                                 img {
                                     width: 18px;
                                     height: 18px;
@@ -213,12 +305,18 @@
                             .nameCateg {
                                 text-transform: capitalize;
                                 font-size: 18px;
+                                @media (min-width: $breakpoint) {
+                                    font-size: 24px;
+                                }
                             }
                             .amountOp {
                                 position: absolute;
                                 right: 5px;
                                 .amount {
                                     font-size: 18px;
+                                    @media (min-width: $breakpoint) {
+                                        font-size: 24px;
+                                    }
                                     &::before {
                                         content: "$";
                                     }
