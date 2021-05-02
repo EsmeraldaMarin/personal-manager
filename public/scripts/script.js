@@ -1,16 +1,59 @@
 //variables//
 let urlOperations = 'http://localhost:3000/operations';
 let urlCategories = 'http://localhost:3000/categories';
-const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImVzbWVtYXJpbm0wM0BnbWFpbC5jb20iLCJwYXNzd29yZCI6InRva2VuMTIzIiwiaWF0IjoxNjE5NTcxNTYyfQ.jAXfOZqNpQmVU72wISfgjTFGZ9kfZFUveBwhbBzlQJA";
+/* const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImVzbWVtYXJpbm0wM0BnbWFpbC5jb20iLCJwYXNzd29yZCI6InRva2VuMTIzIiwiaWF0IjoxNjE5NTcxNTYyfQ.jAXfOZqNpQmVU72wISfgjTFGZ9kfZFUveBwhbBzlQJA";
 localStorage.setItem('token', token);
-let userToken = localStorage.getItem('token')
-
+ */
+let token = localStorage.getItem('token')
 let burguerBtn = document.getElementById('burguerBtn');
-let nav = document.querySelector('nav');
-
 let ulLastOperations = document.getElementById('listOperations');
-
+let nav = document.querySelector('nav');
 let header = document.querySelector('header');
+let logOutBtn = document.querySelector('.logOut')
+
+
+//login 
+
+function selectUser(token) {
+
+    if (!token) {
+        location.href = "http://127.0.0.1:5500/public/login.html";
+        return
+    }
+
+    fetch(`${urlUsers}/${token}`)
+        .then(res => res.json())
+        .then(data => {
+            let rol;
+            if (data[0].is_admin == 1) {
+                body.classList.add("adminMode")
+                rol = "Administrador"
+            } else {
+                body.classList.add("basicMode")
+                rol = "Basico"
+            }
+            userLogued.innerHTML = `
+        <img src="assets/avatar.png" alt="user picture">
+        <p>${data[0].name} ${data[0].lastname}</p>
+        <div>
+          <p class="email">${data[0].email}</p>
+          <p class="rol">Rol: ${rol}</p>
+        </div>
+        `
+            userLogued.addEventListener('click', () => {
+                userLogued.classList.toggle('active')
+            })
+        })
+}
+selectUser(token)
+
+logOutBtn.addEventListener('click', () => {
+    localStorage.removeItem('token')
+    location.href = "http://127.0.0.1:5500/public/login.html";
+})
+
+
+//burguer menu
 
 burguerBtn.addEventListener('click', () => {
     nav.classList.add('menuActive');
@@ -89,7 +132,7 @@ let dateFormaterFromDB = (dateFromDB, definer) => {
         if (month.length == 1) {
             month = "0" + month;
         }
-        
+
         newDate = `${day}/${month}/${year}`
     }
 

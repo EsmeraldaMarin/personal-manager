@@ -11,7 +11,7 @@ function getOperations() {
         method: `GET`,
         type: 'no-cors',
         headers: {
-            token: userToken,
+            token: token,
         },
     };
     return new Promise((resolve, reject) => {

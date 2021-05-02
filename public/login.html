@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href=https://use.fontawesome.com/releases/v5.13.0/css/all.css>
+    <link rel="stylesheet" href="styles/styles.css">
+    <title>My Personal Manager</title>
+
+</head>
+
+<body class="login">
+    <header class="headerLogin">
+        <a href="index.html">
+            <img src="assets/logo.png" alt="Logo">
+        </a>
+    </header>
+    <main class="form_register">
+        <section class="login">
+            <h1>Log In</h1>
+            <form id="formLogin">
+                <div>
+                    <label for="email"><i class="fas fa-envelope"></i></label>
+                    <input type="email" name="email" id="email" placeholder="Email">
+                </div>
+                <div>
+                    <label for="password"><i class="fas fa-lock"></i></label>
+                    <input type="password" name="password" id="password" placeholder="Password">
+                </div>
+                <button type="submit">Log In</button>
+            </form>
+        </section>
+        <section class="register">
+            <h2>Are you new here?</h2>
+            <img src="assets/signin.svg" alt="persona nueva en un sitio">
+            <button id="moveSectionBtn">Sign In</button>
+        </section>
+    </main>
+</body>
+<script src="scripts/login.js"></script>
+
+</html>

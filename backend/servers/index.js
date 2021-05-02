@@ -27,7 +27,7 @@ const { defineRol } = require('./middlewares/validation')
 app.get('/users', selectUsers);
 app.get('/users/:id', selectUserById);
 app.post('/users', insertUser);
-app.post('/login', logIn);
+app.get('/login', logIn);
 
 //operations
 app.get('/operations', defineRol, selectOperationByUserId);
