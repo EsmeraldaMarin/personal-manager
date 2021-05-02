@@ -1,6 +1,10 @@
 # MY PERSONAL MANAGER
 Full Stack Proyect
 
+- DEVELOPER: ESMERALDA MARIN
+- GITHUB: https://github.com/EsmeraldaMarin
+- EMAIL: esmemarinm03@gmail.com
+
 ## Description
 
 MPM (My Personal Manager) is an application intended for personal budget management. It allows you to create and edit money income and expenses, and show a balance of registered operations.
