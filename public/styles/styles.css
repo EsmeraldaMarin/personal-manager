@@ -142,7 +142,13 @@ body.login {
   min-width: 100vw;
   min-height: 100vh;
   overflow: auto;
-  display: flex;
+  display: inherit;
+}
+
+@media (min-width: 1024px) {
+  body.login {
+    display: flex;
+  }
 }
 
 body.login header {
@@ -159,19 +165,33 @@ body.login header > a {
 }
 
 body.login header > a img {
-  width: 60px;
-  height: 60px;
+  width: 40px;
+  height: 40px;
+}
+
+@media (min-width: 1024px) {
+  body.login header > a img {
+    width: 60px;
+    height: 60px;
+  }
 }
 
 body.login .headerLogin {
   min-width: 100%;
-  height: 80px;
+  height: 60px;
   background-color: #fff;
   border-bottom: 2px solid #cae6e8;
-  position: absolute;
+  position: static;
   flex-direction: row;
   padding-top: 0;
   padding-left: 20px;
+}
+
+@media (min-width: 1024px) {
+  body.login .headerLogin {
+    position: absolute;
+    height: 80px;
+  }
 }
 
 body.login .headerLogin a {
@@ -185,16 +205,31 @@ body.login .form_register {
   display: flex;
   height: 100vh;
   width: 100%;
+  flex-direction: column;
+}
+
+@media (min-width: 1024px) {
+  body.login .form_register {
+    flex-direction: row;
+  }
 }
 
 body.login .form_register .login {
   display: flex;
-  width: 40%;
-  padding-left: 100px;
+  width: 100%;
+  margin-top: 30px;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   transition: all 0.75s ease;
+}
+
+@media (min-width: 1024px) {
+  body.login .form_register .login {
+    width: 40%;
+    margin: 0;
+    padding-left: 100px;
+  }
 }
 
 body.login .form_register .login h1 {
@@ -211,10 +246,15 @@ body.login .form_register .login form {
 
 body.login .form_register .login form div {
   display: flex;
-  width: 350px;
   height: 45px;
   background-color: #cae6e8;
   margin-bottom: 15px;
+}
+
+@media (min-width: 1024px) {
+  body.login .form_register .login form div {
+    width: 350px;
+  }
 }
 
 body.login .form_register .login form div label {
@@ -249,8 +289,8 @@ body.login .form_register .login form div select {
 }
 
 body.login .form_register .login form button {
-  width: 200px;
-  height: 45px;
+  width: 150px;
+  height: 40px;
   background-color: #0f2f57;
   color: #fff;
   font-size: 15px;
@@ -259,36 +299,64 @@ body.login .form_register .login form button {
   font-size: 18px;
 }
 
+@media (min-width: 1024px) {
+  body.login .form_register .login form button {
+    width: 200px;
+    height: 45px;
+  }
+}
+
 body.login .form_register .login form button:hover {
   background-color: #008891;
 }
 
-body.login .form_register .login.signInMode {
-  transform: translateX(130%);
+@media (min-width: 1024px) {
+  body.login .form_register .login.signInMode {
+    transform: translateX(130%);
+  }
 }
 
 body.login .form_register .register {
-  width: 60%;
-  padding-left: 150px;
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  margin-top: 30px;
+  padding-top: 30px;
+  padding-bottom: 30px;
   align-items: center;
+  box-shadow: 0 0 10px #555;
   background-image: url(../assets/login_fondo.png);
   background-position-x: 100%;
   background-position-y: 50%;
   background-attachment: fixed;
-  clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 0% 100%);
   transition: all 0.75s ease;
+}
+
+@media (min-width: 1024px) {
+  body.login .form_register .register {
+    box-shadow: none;
+    margin: 0;
+    width: 60%;
+    padding: 0 0 0 150px;
+    clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 0% 100%);
+  }
 }
 
 body.login .form_register .register h2 {
   color: #0f2f57;
+  text-align: center;
 }
 
 body.login .form_register .register img {
   margin: 20px 0 30px;
-  width: 500px;
+  width: 200px;
+}
+
+@media (min-width: 1024px) {
+  body.login .form_register .register img {
+    width: 500px;
+  }
 }
 
 body.login .form_register .register button {
@@ -307,10 +375,12 @@ body.login .form_register .register button:hover {
   color: #fff;
 }
 
-body.login .form_register .register.signInMode {
-  clip-path: polygon(0% 0%, 75% 0%, 100% 100%, 0% 100%);
-  transform: translateX(-70%);
-  padding: 0 150px 0 0;
+@media (min-width: 1024px) {
+  body.login .form_register .register.signInMode {
+    clip-path: polygon(0% 0%, 75% 0%, 100% 100%, 0% 100%);
+    transform: translateX(-70%);
+    padding: 0 150px 0 0;
+  }
 }
 
 .login {
