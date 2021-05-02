@@ -48,7 +48,7 @@ let insertUser = (req, res) => {
 
         if (resultEmail) {
 
-            res.status(409).json({ message: 'This user already exists' })
+            res.status(409).json({ err, message: 'This user already exists' })
             return
         }
 

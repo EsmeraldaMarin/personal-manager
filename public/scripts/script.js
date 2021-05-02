@@ -20,12 +20,13 @@ function selectUser(token) {
         return
     }
 
-     fetch(`${urlUsers}/${token}`)
+    fetch(`${urlUsers}/${token}`)
         .then(res => res.json())
         .then(data => {
+            userInfoCtn.querySelector('img').src = `http://127.0.0.1:5500/public/assets/${data.img}`
             userInfoCtn.querySelector('#userName').textContent = data.name;
             userInfoCtn.querySelector('#userLastname').textContent = data.lastname;
-        }) 
+        })
 }
 selectUser(token)
 
