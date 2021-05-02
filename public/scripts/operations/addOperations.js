@@ -8,7 +8,7 @@ addOperation.forEach(addOp => {
         header.insertAdjacentHTML('afterend', formCreateOperation);
 
         let ulCategories = document.querySelector('#gridCategories');
-        let categories = get7Categories();
+        let categories = getAllCategories();
         let catSelected = false;
         categories.then(res => {
             let numberOfCategories = res.length;

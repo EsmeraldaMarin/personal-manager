@@ -1,5 +1,6 @@
 let typeBtns = document.querySelectorAll('div.typeBtns >div');
 let detailsOpSection = document.querySelectorAll('div.detailsOpSection');
+let totalBalanceHTML = document.querySelector('#totalBalance .amount');
 let expSec = document.querySelector('.expSec');
 let incSec = document.querySelector('.incSec');
 let resSum = 0;
@@ -98,7 +99,6 @@ async function operationsByType() {
     let expOperations = orderedOperations.filter(op => op.type == "e");
     let incOperations = orderedOperations.filter(op => op.type == "i");
 
-
     // sum of expenses amounts and creation of li 
     expOperations.forEach(op => {
         amountArrE.push(op.amount)
@@ -129,7 +129,7 @@ async function operationsByType() {
     let liOperations = document.querySelectorAll('li.operation');
     operationDetails(liOperations);
 }
-if (expSec) {
+if (totalBalanceHTML) {
     operationsByType()
 }
 
@@ -150,14 +150,11 @@ async function getBalance() {
     let amountArrE = [];
     let amountArrI = [];
     let totalBalance;
-    let totalBalanceHTML = document.querySelector('#totalBalance .amount');
-    let userBalanceHTML =document.querySelector('#userBalance')
-
+    let userBalanceHTML = document.querySelector('#userBalance')
 
     //divide expenses and incomes
     let expOperations = allOperations.filter(op => op.type == "e");
     let incOperations = allOperations.filter(op => op.type == "i");
-
 
     // sum of expenses amounts and creation of li 
     expOperations.forEach(op => {
@@ -179,4 +176,7 @@ async function getBalance() {
     userBalanceHTML.textContent = totalBalance;
 }
 
-getBalance()
+if (totalBalanceHTML) {
+    getBalance()
+}
+
