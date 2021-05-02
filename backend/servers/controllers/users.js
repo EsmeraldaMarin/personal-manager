@@ -23,16 +23,16 @@ let selectUsers = (req, res) => {
     })
 }
 
-let selectUserById = (req, res) => {
-    let userId = req.params.id;
-    let sql = `SELECT * FROM users WHERE id = ${userId}`
+let selectUserByPassword = (req, res) => {
+    let userPassword = req.params.user.password;
+    let sql = `SELECT * FROM users WHERE password = "${userPassword}"`
     connection.query(sql, function (err, user) {
         if (err) {
             console.log(err)
             res.status(500).json({ error: 'Internal error' });
 
         } else {
-            res.send(user)
+            res.send(user[0])
         }
     })
 }
@@ -111,7 +111,7 @@ let logIn = (req, res) => {
 }
 module.exports = {
     selectUsers,
-    selectUserById,
+    selectUserByPassword,
     insertUser,
     logIn
 }

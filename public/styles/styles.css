@@ -405,6 +405,7 @@ header nav .userInfo > div {
 header nav .userInfo > div p {
   display: flex;
   align-items: center;
+  text-transform: capitalize;
 }
 
 header nav .userInfo > div p:first-child {

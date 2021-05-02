@@ -1,15 +1,14 @@
 //variables//
 let urlOperations = 'http://localhost:3000/operations';
 let urlCategories = 'http://localhost:3000/categories';
-/* const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImVzbWVtYXJpbm0wM0BnbWFpbC5jb20iLCJwYXNzd29yZCI6InRva2VuMTIzIiwiaWF0IjoxNjE5NTcxNTYyfQ.jAXfOZqNpQmVU72wISfgjTFGZ9kfZFUveBwhbBzlQJA";
-localStorage.setItem('token', token);
- */
+let urlUsers = 'http://localhost:3000/users';
 let token = localStorage.getItem('token')
 let burguerBtn = document.getElementById('burguerBtn');
 let ulLastOperations = document.getElementById('listOperations');
+let userInfoCtn = document.querySelector('.userInfo')
 let nav = document.querySelector('nav');
 let header = document.querySelector('header');
-let logOutBtn = document.querySelector('.logOut')
+let logOutBtn = document.querySelector('.logOut');
 
 
 //login 
@@ -21,29 +20,12 @@ function selectUser(token) {
         return
     }
 
-    fetch(`${urlUsers}/${token}`)
+     fetch(`${urlUsers}/${token}`)
         .then(res => res.json())
         .then(data => {
-            let rol;
-            if (data[0].is_admin == 1) {
-                body.classList.add("adminMode")
-                rol = "Administrador"
-            } else {
-                body.classList.add("basicMode")
-                rol = "Basico"
-            }
-            userLogued.innerHTML = `
-        <img src="assets/avatar.png" alt="user picture">
-        <p>${data[0].name} ${data[0].lastname}</p>
-        <div>
-          <p class="email">${data[0].email}</p>
-          <p class="rol">Rol: ${rol}</p>
-        </div>
-        `
-            userLogued.addEventListener('click', () => {
-                userLogued.classList.toggle('active')
-            })
-        })
+            userInfoCtn.querySelector('#userName').textContent = data.name;
+            userInfoCtn.querySelector('#userLastname').textContent = data.lastname;
+        }) 
 }
 selectUser(token)
 

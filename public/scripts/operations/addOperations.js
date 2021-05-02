@@ -70,7 +70,7 @@ addOperation.forEach(addOp => {
                 type: 'no-cors',
                 body: formData,
                 headers: {
-                    token: userToken
+                    token: token
                 }
             };
             fetch(urlOperations, params)

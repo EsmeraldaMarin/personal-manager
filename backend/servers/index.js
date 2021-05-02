@@ -15,7 +15,7 @@ app.use(bodyParser.json());
 app.use(upload.array());
 app.use(express.static('public'));
 
-const { selectUsers, selectUserById, insertUser, logIn } = require('./controllers/users');
+const { selectUsers, selectUserByPassword, insertUser, logIn } = require('./controllers/users');
 const { selectOperationsById, selectOperationByUserId, insertOperations, updateOperation, deleteOperation } = require('./controllers/operations');
 const { selectCategories, selectCategoriesById, insertCategory, updateCategory } = require('./controllers/categories');
 const { defineRol } = require('./middlewares/validation')
@@ -25,9 +25,9 @@ const { defineRol } = require('./middlewares/validation')
 
 //user routes
 app.get('/users', selectUsers);
-app.get('/users/:id', selectUserById);
+app.get('/users/:pass', defineRol, selectUserByPassword);
 app.post('/users', insertUser);
-app.get('/login', logIn);
+app.post('/login', logIn);
 
 //operations
 app.get('/operations', defineRol, selectOperationByUserId);

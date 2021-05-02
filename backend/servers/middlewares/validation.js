@@ -15,9 +15,11 @@ let validateToken = (token) => {
 
 let defineRol = (req, res, next) => {
 
-    const token = req.headers.token;
+    let token = req.headers.token;
+    if (!token) {
+        token = req.params.pass
+    }
     let decodedUser = validateToken(token)
-
     if (decodedUser) {
         let sql = `SELECT * FROM users WHERE users.email = "${decodedUser.email}"`;
         connection.query(sql, (err, user) => {

@@ -70,7 +70,7 @@ formLogin.addEventListener('submit', e => {
     e.preventDefault()
     let formData = new FormData(e.currentTarget)
     let params = {
-        method: 'GET',
+        method: 'POST',
         type: 'no-cors',
         body: formData
     };
@@ -78,18 +78,19 @@ formLogin.addEventListener('submit', e => {
     for (var pair of formData.entries()) {
 
         if (pair[1] == "") {
-            console.log("falta rellenar el campo de " + pair[0])
+            alert(`Missing fill in the ${pair[0]} field`)
             return
         }
     }
     fetch('http://localhost:3000/login', params)
         .then(res => res.json())
         .then(data => {
+            console.log(data)
             if (data.user) {
                 localStorage.setItem("token", data.jwt)
                 location.href = "http://127.0.0.1:5500/public/index.html";
             } else {
-                console.log("incorrect user")
+                alert("Incorrect user")
             }
 
         })
