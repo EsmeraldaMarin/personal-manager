@@ -1081,6 +1081,13 @@ main.homeMain .operationsSection .listOperations .operation .amountOp .amount.i:
   font-weight: normal;
 }
 
+@media (min-width: 1024px) {
+  .categoriesMain h2 {
+    margin: 80px 0 60px;
+    font-size: 2.5em;
+  }
+}
+
 .categoriesMain .categoriesDiv {
   width: 100%;
   min-height: calc(100vh - 190px);
@@ -1089,11 +1096,25 @@ main.homeMain .operationsSection .listOperations .operation .amountOp .amount.i:
   position: relative;
 }
 
+@media (min-width: 1024px) {
+  .categoriesMain .categoriesDiv {
+    width: 90%;
+    padding: 0 50px 50px;
+    margin-bottom: 50px;
+  }
+}
+
 .categoriesMain .categoriesDiv .typeBtns {
   width: 100%;
   display: flex;
   justify-content: space-between;
   padding: 20px 25px 0;
+}
+
+@media (min-width: 1024px) {
+  .categoriesMain .categoriesDiv .typeBtns {
+    padding: 25px;
+  }
 }
 
 .categoriesMain .categoriesDiv .typeBtns > div {
@@ -1107,6 +1128,13 @@ main.homeMain .operationsSection .listOperations .operation .amountOp .amount.i:
   font-size: 20px;
 }
 
+@media (min-width: 1024px) {
+  .categoriesMain .categoriesDiv .typeBtns > div {
+    padding-bottom: 10px;
+    font-size: 24px;
+  }
+}
+
 .categoriesMain .categoriesDiv .typeBtns > div.activeType {
   border-bottom: 2px solid #0f2f57;
 }
@@ -1117,6 +1145,12 @@ main.homeMain .operationsSection .listOperations .operation .amountOp .amount.i:
   padding: 0 20px 25px;
 }
 
+@media (min-width: 1024px) {
+  .categoriesMain .categoriesDiv > div {
+    padding: 0;
+  }
+}
+
 .categoriesMain .categoriesDiv > div .allCategories {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -1124,6 +1158,12 @@ main.homeMain .operationsSection .listOperations .operation .amountOp .amount.i:
   grid-row-gap: 20px;
   min-width: calc(100vw - 50px);
   position: relative;
+}
+
+@media (min-width: 1024px) {
+  .categoriesMain .categoriesDiv > div .allCategories {
+    min-width: calc(100%);
+  }
 }
 
 .categoriesMain .categoriesDiv > div .allCategories.expSec {
@@ -1146,12 +1186,24 @@ main.homeMain .operationsSection .listOperations .operation .amountOp .amount.i:
   transition: transform 0.45s linear;
 }
 
+@media (min-width: 1024px) {
+  .categoriesMain .categoriesDiv > div .allCategories.incSec.activeSection {
+    transform: translateX(-100%);
+  }
+}
+
 .categoriesMain .categoriesDiv > div .allCategories li {
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 60px;
   margin-left: 7px;
+}
+
+@media (min-width: 1024px) {
+  .categoriesMain .categoriesDiv > div .allCategories li {
+    width: inherit;
+  }
 }
 
 .categoriesMain .categoriesDiv > div .allCategories li div {
@@ -1164,15 +1216,36 @@ main.homeMain .operationsSection .listOperations .operation .amountOp .amount.i:
   justify-content: center;
 }
 
+@media (min-width: 1024px) {
+  .categoriesMain .categoriesDiv > div .allCategories li div {
+    width: 90px;
+    height: 90px;
+    border-radius: 60px;
+  }
+}
+
 .categoriesMain .categoriesDiv > div .allCategories li div img {
   width: 18px;
   height: 18px;
+}
+
+@media (min-width: 1024px) {
+  .categoriesMain .categoriesDiv > div .allCategories li div img {
+    width: 30px;
+    height: 30px;
+  }
 }
 
 .categoriesMain .categoriesDiv > div .allCategories li .categoryName {
   font-size: 14px;
   margin: 10px 0;
   text-transform: capitalize;
+}
+
+@media (min-width: 1024px) {
+  .categoriesMain .categoriesDiv > div .allCategories li .categoryName {
+    font-size: 18px;
+  }
 }
 
 .categoriesMain .categoriesDiv .opsByCategory {
@@ -1189,6 +1262,12 @@ main.homeMain .operationsSection .listOperations .operation .amountOp .amount.i:
   overflow: auto;
 }
 
+@media (min-width: 1024px) {
+  .categoriesMain .categoriesDiv .opsByCategory {
+    left: 0;
+  }
+}
+
 .categoriesMain .categoriesDiv .opsByCategory > .comeBackBtn {
   position: absolute;
   left: 20px;
@@ -1197,14 +1276,30 @@ main.homeMain .operationsSection .listOperations .operation .amountOp .amount.i:
   height: 15px;
 }
 
+@media (min-width: 1024px) {
+  .categoriesMain .categoriesDiv .opsByCategory > .comeBackBtn {
+    top: 60px;
+    left: 60px;
+    width: 25px;
+    height: 25px;
+  }
+}
+
 .categoriesMain .categoriesDiv .opsByCategory .iconImg {
   width: 55px;
   height: 55px;
-  border-radius: 30px;
+  border-radius: 40px;
   background-color: #008891;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+@media (min-width: 1024px) {
+  .categoriesMain .categoriesDiv .opsByCategory .iconImg {
+    width: 70px;
+    height: 70px;
+  }
 }
 
 .categoriesMain .categoriesDiv .opsByCategory .iconImg img {
@@ -1212,10 +1307,24 @@ main.homeMain .operationsSection .listOperations .operation .amountOp .amount.i:
   height: 18px;
 }
 
+@media (min-width: 1024px) {
+  .categoriesMain .categoriesDiv .opsByCategory .iconImg img {
+    width: 22px;
+    height: 22px;
+  }
+}
+
 .categoriesMain .categoriesDiv .opsByCategory > .categoryName {
   font-size: 18px;
   margin: 20px 0 30px;
   text-transform: uppercase;
+}
+
+@media (min-width: 1024px) {
+  .categoriesMain .categoriesDiv .opsByCategory > .categoryName {
+    font-size: 1.6em;
+    margin: 20px 0 30px;
+  }
 }
 
 .categoriesMain .categoriesDiv .opsByCategory .allOperations {
@@ -1233,9 +1342,28 @@ main.homeMain .operationsSection .listOperations .operation .amountOp .amount.i:
   margin-bottom: 10px;
 }
 
+@media (min-width: 1024px) {
+  .categoriesMain .categoriesDiv .opsByCategory .allOperations li {
+    height: 60px;
+    font-size: 1.5em;
+  }
+}
+
+.categoriesMain .categoriesDiv .opsByCategory .allOperations li .dateOp {
+  color: #fff;
+}
+
 .categoriesMain .categoriesDiv .opsByCategory .allOperations li .categoryName {
   margin: 0 20px;
   text-transform: capitalize;
+}
+
+@media (min-width: 1024px) {
+  .categoriesMain .categoriesDiv .opsByCategory .allOperations li .categoryName {
+    padding-left: 20px;
+    border-left: 2px solid #fff;
+    margin: 0;
+  }
 }
 
 .categoriesMain .categoriesDiv .opsByCategory .allOperations li .amountOp {
