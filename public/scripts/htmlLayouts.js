@@ -74,4 +74,33 @@ let adviseModal = (action) => {
     </div>
     `
     return html
+};
+
+let opsByCategModal = (info) => {
+    if (info.length == 0) {
+        return
+    }
+    let htmlLi = "";
+    info.forEach(op => {
+        let dateFormated = dateFormaterFromDB(op.date, 2);
+        htmlLi += `
+        <li>
+            <p class="dateOp">${dateFormated}</p>
+            <p class="categoryName">${op.categoryInfo.name}</p>
+            <p class="amountOp"><span>$</span><span class="amount">${op.amount}</span></p>
+        </li>`
+    })
+    let html = `
+    <div class="opsByCategory">
+        <img src="assets/icons/arrowLeft.svg" alt="icon-arrow left" class="comeBackBtn">
+        <div class="iconImg" style="background-color:#${info[0].categoryInfo.color}">
+            <img src="assets/icons/${info[0].categoryInfo.icon}" alt="icon - ${info[0].categoryInfo.name}">
+        </div>
+        <p class="categoryName">${info[0].categoryInfo.name}</p>
+        <ul class="allOperations">
+            ${htmlLi}
+        </ul>
+    </div>
+    `
+    return html
 }

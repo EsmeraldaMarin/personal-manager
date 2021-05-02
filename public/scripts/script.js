@@ -78,7 +78,19 @@ let dateFormaterFromDB = (dateFromDB, definer) => {
 
         newDate = `${month} ${day} - ${year}`;
     } else if (definer == 2) {
-        newDate = `${day}/${month + 1}/${year}`
+
+        day = day.toString();
+        if (day.length == 1) {
+            day = "0" + day;
+        }
+
+        month = month + 1;
+        month = month.toString();
+        if (month.length == 1) {
+            month = "0" + month;
+        }
+        
+        newDate = `${day}/${month}/${year}`
     }
 
     return newDate

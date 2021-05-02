@@ -4,6 +4,7 @@ let totalBalanceHTML = document.querySelector('#totalBalance .amount');
 let expSec = document.querySelector('.expSec');
 let incSec = document.querySelector('.incSec');
 let resSum = 0;
+let mainOperations = document.querySelector('.operationsMain');
 
 function getOperations() {
     let params = {
@@ -129,7 +130,7 @@ async function operationsByType() {
     let liOperations = document.querySelectorAll('li.operation');
     operationDetails(liOperations);
 }
-if (totalBalanceHTML) {
+if (mainOperations) {
     operationsByType()
 }
 
