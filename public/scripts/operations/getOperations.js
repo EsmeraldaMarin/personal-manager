@@ -48,9 +48,11 @@ if (ulLastOperations) {
 
 function createLiOperations(op, parent) {
     let categoryInfo = op.categoryInfo;
-    op.amount = new Intl.NumberFormat().format(op.amount)
+    op.amount = new Intl.NumberFormat().format(op.amount);
+    let dateFormated = dateFormaterFromDB(op.date, 2)
     let htmlOperation = `
         <li class="operation ${op.type}" id="${op.id}">
+            <p class="dateOp">${dateFormated}</p>
             <div class="iconCateg" style="background-color: #${categoryInfo.color};">
                 <img src="assets/icons/${categoryInfo.icon}" alt="icon ${categoryInfo.name}"/>
             </div>

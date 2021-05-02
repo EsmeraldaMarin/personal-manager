@@ -8,12 +8,19 @@ header {
     background-color: #fff;
     align-items: center;
     z-index: 500;
+    @media (min-width: $breakpoint) {
+        height: 100vh;
+        background-color: $color2;
+    }
     .menuSection {
         width: 30px;
         height: 30px;
         display: flex;
         flex-direction: column;
         justify-content: space-evenly;
+        @media (min-width: $breakpoint) {
+            display: none;
+        }
         span {
             width: 100%;
             height: 2px;
@@ -31,6 +38,9 @@ header {
         overflow: hidden;
         background-color: $color2;
         transition: width 0.5s ease;
+        @media (min-width: $breakpoint) {
+            width: auto;
+        }
         &.menuActive {
             width: 70%;
             transition: width 0.5s ease;
@@ -91,7 +101,7 @@ header {
             }
         }
     }
-    >a img {
+    > a img {
         width: 50px;
         height: 50px;
     }

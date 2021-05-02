@@ -13,6 +13,11 @@
     color: #fff;
     overflow: auto;
     animation: slideIn 0.5s;
+    @media (min-width: $breakpoint) {
+        width: 35%;
+        right: 0;
+        left: inherit;
+    }
     &.closeForm {
         animation: slideOut 0.5s forwards;
     }
