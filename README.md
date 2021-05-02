@@ -80,21 +80,33 @@ In this README.md you will find the specifications to install, initialize and us
 
 The first thing you should do when you initialize the live server is to select the "public" folder, which is where the ".html" files are located, then you must log in or create a user. The API will allow you to log in if the data entered matches those of the logged in user. The API will allow you to create a user as long as you meet the specified requirements (do not repeat the user's email already created, repeat the password, fill in all the fields).
 
-![Log In](https://ibb.co/BqnvMvz)
+[![img1.png](https://i.postimg.cc/SxXDLv91/img1.png)](https://postimg.cc/LJpt2vNj)
+
 
 ### HOME
 
 Once logged in, you will find the home of the application. If you have operations already created, the last 10 registered and the total balance of all operations will be displayed there.
 
+[![img2.png](https://i.postimg.cc/J065ZNzW/img2.png)](https://postimg.cc/PvDDk8D6)
+[![img6.png](https://i.postimg.cc/Z5365tpm/img6.png)](https://postimg.cc/HrYr6N6v)
+
+
 ### OPERATIONS
 
 In the operations section you will be able to see a list of all the operations separated according to their type (income or expenses), in case you want to see the details of an operation, you can click on it. Once you have selected an operation, you can edit or delete it as needed.
+
+[![img4.png](https://i.postimg.cc/k47QH1Vm/img4.png)](https://postimg.cc/nsw9j1YR)
+
 To create an operation, you must click the button with the "+" symbol that you will easily find on the screen. In the window to create operations you will find a set of fields that you must complete or select in order to efficiently create an operation.
+
+[![img3.png](https://i.postimg.cc/9F0pVnLX/img3.png)](https://postimg.cc/mtxMy8xK)
 
 ### CATEGORIES
 
 The categories section includes all the categories that are offered so that you can have a better organization of your movements. To create new categories, you must do it from an external application such as [POSTMAN](https://www.postman.com/api-documentation-tool/)(recommended) or do it from the database
 If you click on one of all the categories shown on the screen, you will be able to see all the operations that have that category selected.
+
+[![img5.png](https://i.postimg.cc/597BPmbh/img5.png)](https://postimg.cc/RqtJhK3d)
 
 #### >> Endpoints ⚙️
 
